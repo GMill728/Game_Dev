@@ -38,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprButtonTemp",
-    "path":"sprites/sprButtonTemp/sprButtonTemp.yy",
+    "name":"startButton",
+    "path":"sprites/startButton/startButton.yy",
   },
   "spriteMaskId":null,
   "visible":true,
