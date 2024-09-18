@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite34",
-    "path":"sprites/Sprite34/Sprite34.yy",
+    "name":"spr_NameSelectBetter",
+    "path":"sprites/spr_NameSelectBetter/spr_NameSelectBetter.yy",
   },
   "spriteMaskId":null,
   "visible":true,
