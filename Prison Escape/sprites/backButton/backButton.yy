@@ -1,6 +1,6 @@
 {
   "$GMSprite":"",
-  "%Name":"Sprite33",
+  "%Name":"backButton",
   "bboxMode":0,
   "bbox_bottom":19,
   "bbox_left":0,
@@ -12,28 +12,31 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
+    {"$GMSpriteFrame":"","%Name":"72766d4d-293c-4c0a-a5f3-8359b3f0544c","name":"72766d4d-293c-4c0a-a5f3-8359b3f0544c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"724c7e36-2410-4374-89e5-da6085ff7f46","name":"724c7e36-2410-4374-89e5-da6085ff7f46","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"c36db8a1-3cfb-404b-a64a-162f1d2223bf","name":"c36db8a1-3cfb-404b-a64a-162f1d2223bf","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":32,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"64e6f194-7dcc-4d98-8904-88e2b0c5c520","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"64e6f194-7dcc-4d98-8904-88e2b0c5c520","opacity":14.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"7a6d8a67-1b0a-428d-9e58-9cf6e127db01","blendMode":0,"displayName":"default","isLocked":false,"name":"7a6d8a67-1b0a-428d-9e58-9cf6e127db01","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"Sprite33",
+  "name":"backButton",
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Prison Escape",
-    "path":"Prison Escape.yyp",
+    "name":"Buttons",
+    "path":"folders/Sprites/GUI/Buttons.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"",
-    "%Name":"Sprite33",
+    "%Name":"backButton",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -49,7 +52,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":1.0,
+    "length":3.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -57,7 +60,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"Sprite33",
+    "name":"backButton",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -69,8 +72,14 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"724c7e36-2410-4374-89e5-da6085ff7f46","path":"sprites/Sprite33/Sprite33.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"b5350e24-96f8-4787-a201-63420ecd3d54","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"72766d4d-293c-4c0a-a5f3-8359b3f0544c","path":"sprites/backButton/backButton.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"0ca39759-b56c-4f5a-8a17-ad9832dfab5f","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"724c7e36-2410-4374-89e5-da6085ff7f46","path":"sprites/backButton/backButton.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"b5350e24-96f8-4787-a201-63420ecd3d54","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c36db8a1-3cfb-404b-a64a-162f1d2223bf","path":"sprites/backButton/backButton.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"f9eb9ad7-a82c-4098-af71-c25f6a200ca3","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
