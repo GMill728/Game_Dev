@@ -40,8 +40,13 @@
   },
   "name":"Prison Escape",
   "resources":[
+    {"id":{"name":"font8bit","path":"fonts/font8bit/font8bit.yy",},},
+    {"id":{"name":"fontAragon","path":"fonts/fontAragon/fontAragon.yy",},},
+    {"id":{"name":"fontArcade","path":"fonts/fontArcade/fontArcade.yy",},},
     {"id":{"name":"fontButton","path":"fonts/fontButton/fontButton.yy",},},
     {"id":{"name":"fontMenu","path":"fonts/fontMenu/fontMenu.yy",},},
+    {"id":{"name":"fontNearMyth","path":"fonts/fontNearMyth/fontNearMyth.yy",},},
+    {"id":{"name":"fontNearMythLegends","path":"fonts/fontNearMythLegends/fontNearMythLegends.yy",},},
     {"id":{"name":"fontSelect","path":"fonts/fontSelect/fontSelect.yy",},},
     {"id":{"name":"objBackButton","path":"objects/objBackButton/objBackButton.yy",},},
     {"id":{"name":"objBigCrack","path":"objects/objBigCrack/objBigCrack.yy",},},

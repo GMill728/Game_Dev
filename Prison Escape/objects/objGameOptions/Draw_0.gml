@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-draw_set_font(fontMenu); 
+draw_set_font(fontNearMyth); 
 
 draw_set_valign(fa_middle)
 
