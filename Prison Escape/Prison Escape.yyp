@@ -72,6 +72,7 @@
     {"id":{"name":"NameSelect","path":"rooms/NameSelect/NameSelect.yy",},},
     {"id":{"name":"Options","path":"rooms/Options/Options.yy",},},
     {"id":{"name":"PlayRoom","path":"rooms/PlayRoom/PlayRoom.yy",},},
+    {"id":{"name":"seqIntro","path":"sequences/seqIntro/seqIntro.yy",},},
     {"id":{"name":"backButton","path":"sprites/backButton/backButton.yy",},},
     {"id":{"name":"exitButton","path":"sprites/exitButton/exitButton.yy",},},
     {"id":{"name":"mmBackground_1","path":"sprites/mmBackground_1/mmBackground_1.yy",},},
