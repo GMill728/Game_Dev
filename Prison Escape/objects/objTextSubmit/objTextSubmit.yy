@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprNameSelectTemp",
-    "path":"sprites/sprNameSelectTemp/sprNameSelectTemp.yy",
+    "name":"Sprite34",
+    "path":"sprites/Sprite34/Sprite34.yy",
   },
   "spriteMaskId":null,
   "visible":true,
