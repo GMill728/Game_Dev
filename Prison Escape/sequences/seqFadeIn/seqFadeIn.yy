@@ -1,6 +1,6 @@
 {
   "$GMSequence":"",
-  "%Name":"seqIntro",
+  "%Name":"seqFadeIn",
   "autoRecord":true,
   "backdropHeight":1080,
   "backdropImageOpacity":0.5,
@@ -24,7 +24,7 @@
     "resourceType":"KeyframeStore<MomentsEventKeyframe>",
     "resourceVersion":"2.0",
   },
-  "name":"seqIntro",
+  "name":"seqFadeIn",
   "parent":{
     "name":"Sequences",
     "path":"folders/Sequences.yy",
