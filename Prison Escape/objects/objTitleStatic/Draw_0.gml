@@ -3,13 +3,13 @@
 draw_set_font(fontNearMyth);
 draw_set_alpha(1);
 draw_set_color($aaffd4);
+draw_set_alpha(1);
 
 
-if (display_text = true)
-{
-	draw_set_alpha(alpha);
-	draw_text_transformed(room_width / 2, room_height / 2 -360, "Cages of the Forgotten", scale,scale,0);
-}
+
+	
+draw_text_transformed(room_width / 2, room_height / 2 -360, "Cages of the Forgotten", 1.4,1.4,0);
+
 //sets the scale of the text using variables
 
 
