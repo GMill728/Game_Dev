@@ -156,11 +156,11 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"PlayRoom","path":"rooms/PlayRoom/PlayRoom.yy",},},
     {"roomId":{"name":"StudioRoom","path":"rooms/StudioRoom/StudioRoom.yy",},},
     {"roomId":{"name":"Options","path":"rooms/Options/Options.yy",},},
     {"roomId":{"name":"Intro","path":"rooms/Intro/Intro.yy",},},
     {"roomId":{"name":"MainMenu","path":"rooms/MainMenu/MainMenu.yy",},},
-    {"roomId":{"name":"PlayRoom","path":"rooms/PlayRoom/PlayRoom.yy",},},
     {"roomId":{"name":"OldMainMenu","path":"rooms/OldMainMenu/OldMainMenu.yy",},},
     {"roomId":{"name":"NameSelect","path":"rooms/NameSelect/NameSelect.yy",},},
   ],
