@@ -1,0 +1,25 @@
+{
+  "$GMParticleSystem":"",
+  "%Name":"psRain",
+  "backdropHeight":768,
+  "backdropImageOpacity":0.5,
+  "backdropImagePath":"",
+  "backdropWidth":1366,
+  "backdropXOffset":0.0,
+  "backdropYOffset":0.0,
+  "drawOrder":1,
+  "emitters":[
+    {"$GMPSEmitter":"","%Name":"Emitter","additiveBlend":true,"directionIncrease":0.0,"directionMax":200.0,"directionMin":227.0,"directionWiggle":0.0,"distribution":0,"editorColour":1090519039,"editorDrawShape":true,"emitCount":4,"emitDelayMax":0.0,"emitDelayMin":0.0,"emitDelayUnits":0,"emitIntervalMax":0.0,"emitIntervalMin":0.0,"emitIntervalUnits":0,"enabled":true,"endColour":4294952491,"GMPresetName":null,"gravityDirection":245.0,"gravityForce":0.9,"headPosition":0.0,"lifetimeMax":70.0,"lifetimeMin":50.0,"linkedEmitter":null,"locked":false,"midColour":4294955089,"mode":0,"name":"Emitter","orientationIncrease":0.0,"orientationMax":0.0,"orientationMin":342.0,"orientationRelative":false,"orientationWiggle":0.0,"regionH":554.3887,"regionW":1518.9656,"regionX":45.0,"regionY":-612.0,"resourceType":"GMPSEmitter","resourceVersion":"2.0","scaleX":1.0,"scaleY":1.0,"shape":3,"sizeIncrease":0.0,"sizeMax":1.5,"sizeMin":0.5,"sizeWiggle":0.0,"spawnOnDeathCount":1,"spawnOnDeathGMPreset":null,"spawnOnDeathId":null,"spawnOnUpdateCount":1,"spawnOnUpdateGMPreset":null,"spawnOnUpdateId":null,"speedIncrease":0.0,"speedMax":12.0,"speedMin":10.0,"speedWiggle":0.0,"spriteAnimate":true,"spriteId":{"name":"sprRain","path":"sprites/sprRain/sprRain.yy",},"spriteRandom":true,"spriteStretch":true,"startColour":4294910241,"texture":-1,},
+  ],
+  "name":"psRain",
+  "parent":{
+    "name":"Particles",
+    "path":"folders/Particles.yy",
+  },
+  "resourceType":"GMParticleSystem",
+  "resourceVersion":"2.0",
+  "showBackdrop":true,
+  "showBackdropImage":false,
+  "xorigin":13,
+  "yorigin":-42,
+}
