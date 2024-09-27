@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"seqFadeIn_Events1",
   "parent":{
-    "name":"Prison Escape",
-    "path":"Prison Escape.yyp",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
