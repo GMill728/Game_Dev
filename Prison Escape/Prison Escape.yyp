@@ -86,6 +86,7 @@
     {"id":{"name":"MainMenu","path":"rooms/MainMenu/MainMenu.yy",},},
     {"id":{"name":"NameSelect","path":"rooms/NameSelect/NameSelect.yy",},},
     {"id":{"name":"OldMainMenu","path":"rooms/OldMainMenu/OldMainMenu.yy",},},
+    {"id":{"name":"OldNameSelect","path":"rooms/OldNameSelect/OldNameSelect.yy",},},
     {"id":{"name":"OldOptions","path":"rooms/OldOptions/OldOptions.yy",},},
     {"id":{"name":"Options","path":"rooms/Options/Options.yy",},},
     {"id":{"name":"PlayRoom","path":"rooms/PlayRoom/PlayRoom.yy",},},
@@ -163,8 +164,9 @@
     {"roomId":{"name":"Intro","path":"rooms/Intro/Intro.yy",},},
     {"roomId":{"name":"MainMenu","path":"rooms/MainMenu/MainMenu.yy",},},
     {"roomId":{"name":"OldMainMenu","path":"rooms/OldMainMenu/OldMainMenu.yy",},},
-    {"roomId":{"name":"NameSelect","path":"rooms/NameSelect/NameSelect.yy",},},
+    {"roomId":{"name":"OldNameSelect","path":"rooms/OldNameSelect/OldNameSelect.yy",},},
     {"roomId":{"name":"Options","path":"rooms/Options/Options.yy",},},
+    {"roomId":{"name":"NameSelect","path":"rooms/NameSelect/NameSelect.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
