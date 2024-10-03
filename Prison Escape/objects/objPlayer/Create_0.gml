@@ -5,3 +5,6 @@ isSearchingForCash = false;
 hasReceivedKeyLocation = false;
 isTalkingToGuard = false;
 isTalkingToPrisoner = false;
+hasStone = false;
+hasChisel = false;
+hasGuardDistracted = false;
