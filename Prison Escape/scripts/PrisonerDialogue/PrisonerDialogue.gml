@@ -1,17 +1,20 @@
 /// @file Handles the Dialogue Branching and game logic for all interaction with the Prisoner. 
-/// @author Griffin Nye
-//  Date Created: 3/21/24
-//  Last Date Modified: 9/22/24
-
+/// @author Gavin Mills
+//  Griffen Nya created the strucure of the code which is heavily used here
+//  Date Created by Griffen: 3/21/24
+//  Date Edited by Gavin: 10/3/24
+//  Leaving as many comments as possible from the original and editing description for ease of use
+global.prisonerThirdDialogueBranch = 0;
 global.prisonerDialogueBranch = 0;
 global.prisonerDisabled = false;
+global.prisonerDialogueOptions = [];
 
 /// @func displayPrisonerMenu()
 /// @desc Displays the Prisoner dialogue menu to the player using objDialogueBox
 /// @return {undefined}
 function displayPrisonerMenu(){
-	var prisonerDialogueOptions = ["\"Do you know how I get out of here?\"", "\"Could I purchase a drink?\"", "Walk away"];
-	objDialogueBox.setDialogue("Prisoner: \"Howdy partner! What can I do for ya?\"", prisonerDialogueOptions);
+	var prisonerDialogueOptions = ["\"Who are you, and what brings you here?\"", "\"Why is this room shrouded in such darkness?\"", "\"Is there any hope to escape from this hell, or are we doomed ?\"","Walk away"];
+	objDialogueBox.setDialogue("Mysterious Prisoner:     ...", prisonerDialogueOptions);
 }//end displayPrisonerMenu
 
 /// @func submitPrisonerAction(choice)
@@ -25,13 +28,16 @@ function submitPrisonerAction(choice) {
 	
 		switch(choice) {
 		case 0:
-			askToGetOut();
+			whoAreYou();
 			objPlayer.isTalkingToPrisoner = false;
 			break;
 		case 1:
-			askForADrink();
+			darkRoom();
 			break;
 		case 2:
+			escapeQ();
+			break;
+		case 3:
 			objPlayer.isTalkingToPrisoner = false;
 			displayActionsMenu();
 			break;
@@ -49,13 +55,26 @@ function submitPrisonerAction(choice) {
 			objPlayer.isTalkingToPrisoner = objPlayer.isSearchingForCash ? true : false;
 			break;
 		}//end switch
-		
-	} else if (global.prisonerDialogueBranch == 2) { //Cash Register Branch
+	
+	} else if (global.prisonerDialogueBranch == 3) { //Cash Register Branch
 		
 		switch(choice) {
 		case 0:
 			raidCashRegister();
 			objPlayer.isTalkingToPrisoner = false;
+			break;
+		}//end switch
+
+	} else if (global.prisonerDialogueBranch == 2) { //Player escape question
+		
+		switch(choice) {
+		case 0:
+			getGingerAle();
+			objPlayer.isTalkingToPrisoner = false
+			break;
+		case 1:
+			getRootBeer();
+			objPlayer.isTalkingToPrisoner = objPlayer.isSearchingForCash ? true : false;
 			break;
 		}//end switch
 		
@@ -64,24 +83,75 @@ function submitPrisonerAction(choice) {
 }//end submitPrisonerAction
 
 /// @func askToGetOut()
-/// @desc Handles Prisoner response to player asking how to get out of here.
+/// @desc Handles Prisoner response to player asking who they are
 /// @return {undefined}
-function askToGetOut() {
-	objDialogueBox.setDialogue("Prisoner: \"I'm a very busy man, I ain't got time for this.\nGo ask Buster over yonder.\nHe never does anything 'round these parts anyway.\"");
-}//end askToGetOut
+function whoAreYou() {
+	objDialogueBox.setDialogue("Prisoner: \"A name long forgotten, a soul bound by shadows. I am but a whisper in the dark, a keeper of secrets that time has left behind\"");
+}//end whoAreYou
 
 /// @func askForADrink()
 /// @desc Handles Prisoner response to player asking to order a drink and presents player with drink options.
 /// @return {undefined}
-function askForADrink() {
-	var drinkOptions = ["\"Could I get a ginger ale?\"", "\"Do you have any root beer?\""];
+function darkRoom() {
+	objDialogueBox.setDialogue("Prisoner: \"This darkness holds us because we're at the bottom, where no light dares to reach. For those cast this low, there is no salvation, darkness being our only companion.\"");
+}//end darkRoom
+
+/*
+var drinkOptions = ["\"Could I get a ginger ale?\"", "\"Do you have any root beer?\""];
 	global.prisonerDialogueBranch = 1; //Change branch to drink ordering branch
 	objDialogueBox.setDialogue("Prisoner: \"You sure can, partner! What can I 'getcha?\"", drinkOptions);
-}//end askForADrink
 
-/// @func getGingerAle()
-/// @desc Handles Prisoner response to player ordering a ginger ale. Ends interaction with Prisoner.
-/// @return {undefined}
+
+
+
+//this is a way to create small options
+//@desc Handles Prisoner response to player ordering a ginger ale. Ends interaction with Prisoner.
+*/
+
+
+
+
+function escapeQ() {
+	var prisonerText = "Prisoner: \"";
+	
+	global.prisonerDialogueOptions = [];
+	
+	switch(global.prisonerThirdDialogueBranch) {
+	case 0:
+		prisonerText += "The entrance to the cell is guarded at all times so that is a no, but there is another way...\"";
+		array_set(global.prisonerDialogueOptions, 0, "\"You're hiding something. Tell me about this 'other way' \""); //Replace previous first option
+		global.prisonerThirdDialogueBranch++;																	  //Increment dialogue branch to spawn next choice
+		
+		break;
+	case 1: 
+		prisonerText += "\"Beneath the shroud of forgotten dreams, where the golden whispers hide, lies the secret you seek\""
+		array_set(global.prisonerDialogueOptions, 0, "\"okay... \"");  //Replace previous first option
+		global.prisonerThirdDialogueBranch++;													   //Increment dialogue branch to spawn next choice
+		break;
+	case 2: 
+		prisonerText += "\"Beneath the shroud of forgotten dreams lies the secret you seek.\""
+		array_set(global.prisonerDialogueOptions, 0, "\"okay... \"");  //Replace previous first option
+		global.prisonerThirdDialogueBranch++;													   //Increment dialogue branch to spawn next choice
+		break;
+	case 3://How'd you land the job? case
+		prisonerText += "Well, the innkeepr is actually my brother-in-law.\n" +
+				        "I was looking for work and he was looking for a watchful eye, so it kind of worked out. " +
+				        "Here I am 12 years later... *sigh*\n" +
+				        "Sadly, it doesn't pay that well, but I suppose I shouldn't expect much for standing around on days like these.\""
+		array_set(global.prisonerDialogueOptions, 0, "\"Dang, that sucks\""); //Replace previous first option
+		global.prisonerThirdDialogueBranch++;                                //Increment dialogue branch to spawn next choice
+		objPlayer.hasInfluencedGuard = true;                               //Unlock progression through second Guard dialogue branch
+		break;		 
+	case 4: //That sucks case
+		prisonerText += "Yeah, it does.\"";
+		objDialogueBox.setDialogue(guardText);
+		objPlayer.isTalkingToGuard = false;
+		return;
+	}//end switch
+	
+	objDialogueBox.setDialogue(prisonerText, global.prisonerDialogueOptions);
+
+}//end handleFirstBranch
 function getGingerAle() {
 	global.prisonerDialogueBranch = 0; //Reset branch to default branch
 	objDialogueBox.setDialogue("Prisoner: \"There ya go, partner. I'll put it on your tab.\"");	

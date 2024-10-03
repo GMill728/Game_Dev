@@ -10,10 +10,10 @@ if (choice) {
 		
 		//Prevent Innkeeper option from being selected while disabled
 		//NOTE: Will be deprecated after movmement & collision
-		if (global.prisonerDisabled && selected == 2) {
+	if (global.prisonerDisabled && selected == 3) {
 			selected = -1;
 		}//end if
-		
+	
 		submitPlayerAction(selected);
 		
 	}//end if
