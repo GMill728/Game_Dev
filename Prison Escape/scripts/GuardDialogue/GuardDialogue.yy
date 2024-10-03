@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"GuardDialogue",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"GuardDialogue",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
