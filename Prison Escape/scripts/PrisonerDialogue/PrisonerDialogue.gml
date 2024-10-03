@@ -112,46 +112,49 @@ var drinkOptions = ["\"Could I get a ginger ale?\"", "\"Do you have any root bee
 
 
 function escapeQ() {
-	var prisonerText = "Prisoner: \"";
-	
-	global.prisonerDialogueOptions = [];
-	
-	switch(global.prisonerThirdDialogueBranch) {
-	case 0:
-		prisonerText += "The entrance to the cell is guarded at all times so that is a no, but there is another way...\"";
-		array_set(global.prisonerDialogueOptions, 0, "\"You're hiding something. Tell me about this 'other way' \""); //Replace previous first option
-		global.prisonerThirdDialogueBranch++;																	  //Increment dialogue branch to spawn next choice
-		
-		break;
-	case 1: 
-		prisonerText += "\"Beneath the shroud of forgotten dreams, where the golden whispers hide, lies the secret you seek\""
-		array_set(global.prisonerDialogueOptions, 0, "\"okay... \"");  //Replace previous first option
-		global.prisonerThirdDialogueBranch++;													   //Increment dialogue branch to spawn next choice
-		break;
-	case 2: 
-		prisonerText += "\"Beneath the shroud of forgotten dreams lies the secret you seek.\""
-		array_set(global.prisonerDialogueOptions, 0, "\"okay... \"");  //Replace previous first option
-		global.prisonerThirdDialogueBranch++;													   //Increment dialogue branch to spawn next choice
-		break;
-	case 3://How'd you land the job? case
-		prisonerText += "Well, the innkeepr is actually my brother-in-law.\n" +
-				        "I was looking for work and he was looking for a watchful eye, so it kind of worked out. " +
-				        "Here I am 12 years later... *sigh*\n" +
-				        "Sadly, it doesn't pay that well, but I suppose I shouldn't expect much for standing around on days like these.\""
-		array_set(global.prisonerDialogueOptions, 0, "\"Dang, that sucks\""); //Replace previous first option
-		global.prisonerThirdDialogueBranch++;                                //Increment dialogue branch to spawn next choice
-		objPlayer.hasInfluencedGuard = true;                               //Unlock progression through second Guard dialogue branch
-		break;		 
-	case 4: //That sucks case
-		prisonerText += "Yeah, it does.\"";
-		objDialogueBox.setDialogue(guardText);
-		objPlayer.isTalkingToGuard = false;
-		return;
-	}//end switch
-	
-	objDialogueBox.setDialogue(prisonerText, global.prisonerDialogueOptions);
+    var prisonerText = "Prisoner: \"";
+    global.prisonerDialogueOptions = [];  // Clear previous options to ensure no overlap
 
-}//end handleFirstBranch
+    switch(global.prisonerThirdDialogueBranch) {
+        case 0:
+            prisonerText += "The entrance to the cell is guarded at all times so that is a no, but there is another way...\"";
+            array_set(global.prisonerDialogueOptions, 0, "\"You're hiding something. Tell me about this 'other way' \"");
+            global.prisonerThirdDialogueBranch++;  // Increment branch
+            break;
+        case 1: 
+            prisonerText += "\"Beneath the shroud of forgotten dreams, where the golden whispers hide, lies the secret you seek\"";
+            array_set(global.prisonerDialogueOptions, 0, "\"Okay... \"");  // Replace previous options
+            global.prisonerThirdDialogueBranch++;
+            break;
+        case 2: 
+            prisonerText += "\"This place, beneath the shroud of forgotten dreams...\"";
+            array_set(global.prisonerDialogueOptions, 0, "\"What do you mean?\"");
+            global.prisonerThirdDialogueBranch++;
+            break;
+        case 3:
+            prisonerText += "Well, the innkeeper is actually my brother-in-law...\n" +
+                            "Here I am 12 years later... *sigh*\n";
+            array_set(global.prisonerDialogueOptions, 0, "\"Dang, that sucks\"");
+            global.prisonerThirdDialogueBranch++;
+            objPlayer.hasInfluencedGuard = true;  // Progress through second Guard dialogue branch
+            break;		 
+        case 4:
+            prisonerText += "Yeah, it does.\"";
+            objPlayer.isTalkingToPrisoner = false;
+            return;
+    }
+
+    // Set the new dialogue
+    objDialogueBox.setDialogue(prisonerText, global.prisonerDialogueOptions);
+}
+
+
+	
+
+
+
+
+
 function getGingerAle() {
 	global.prisonerDialogueBranch = 0; //Reset branch to default branch
 	objDialogueBox.setDialogue("Prisoner: \"There ya go, partner. I'll put it on your tab.\"");	
