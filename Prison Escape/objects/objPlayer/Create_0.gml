@@ -1,8 +1,8 @@
-hasKey = false;
-hasCash = false;
-hasInfluencedGuard = false;
-isSearchingForCash = false;
-hasReceivedKeyLocation = false;
+hasKey = false;//do not use
+hasCash = false;//do not use
+hasInfluencedGuard = false; //do not use
+isSearchingForCash = false;//do not use
+hasReceivedKeyLocation = false;//do not use
 isTalkingToGuard = false;
 isTalkingToPrisoner = false;
 hasStone = false;
