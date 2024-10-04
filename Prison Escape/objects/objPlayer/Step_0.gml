@@ -1,4 +1,5 @@
-//documentation
+//@Creator Griffin Nye
+//@Modified by Wilfred
 
 if (keyboard_check(ord("A")) )
 {

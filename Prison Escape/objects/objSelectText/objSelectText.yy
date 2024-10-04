@@ -9,8 +9,8 @@
   "name":"objSelectText",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"menuText",
+    "path":"folders/Objects/menuText.yy",
   },
   "parentObjectId":null,
   "persistent":false,
