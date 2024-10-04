@@ -20,7 +20,7 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
 //Draw the text
-typeText(left + padding, top + padding, text, textProgress, width - padding * 2);
+typeText(left + padding + 16, top + padding, text, textProgress, width - padding * 2);
 
 //Handle display of choices after dialogue is stated
 if (textProgress >= textLength && choice) {
