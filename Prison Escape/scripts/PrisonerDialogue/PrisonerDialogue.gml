@@ -131,14 +131,15 @@ function escapeQ() {
             global.prisonerThirdDialogueBranch++;
             break;
         case 3:
-            prisonerText += "Well, the innkeeper is actually my brother-in-law...\n" +
-                            "Here I am 12 years later... *sigh*\n";
-            array_set(global.prisonerDialogueOptions, 2, "\"Dang, that sucks\"");
+            prisonerText += " Golden whispers hide the truth beneath the shroud of forgotten dreams\n" +
+                      //      "Here I am 12 years later... *sigh*\n";
+            array_set(global.prisonerDialogueOptions, 2, "is this what you meant? the player holds a glowing blue rock");
             global.prisonerThirdDialogueBranch++;
-            objPlayer.hasInfluencedGuard = true;  // Progress through second Guard dialogue branch
+            objPlayer.hasStone = true;  // got whispering stone
             break;		 
         case 4:
-            prisonerText += "Yeah, it does.\"";
+   
+		   prisonerText += "Yeah, it does.\"";
             objPlayer.isTalkingToPrisoner = false;
             return;
     }
