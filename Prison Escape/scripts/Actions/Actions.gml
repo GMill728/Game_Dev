@@ -5,7 +5,7 @@
 
 /*** NOTE: This Script will be deprecated once Movement and Collision are implemented, however, is very important for ensuring all of your game logic is mapped out appropriately. ***/
 
-global.actionOptions = ["Open Door", "Inspect Rug", "Approach Prisoner", "Approach Guard"];
+global.actionOptions = ["Open Door", "Inspect Rug", "Approach Prisoner", "Approach Door"];
 
 /// @func displayActionsMenu()
 /// @desc Displays the Actions Menu to the player using objDialogueBox
@@ -33,8 +33,15 @@ function submitPlayerAction(choice) {
 			objPlayer.isTalkingToPrisoner = true;
 			break;
 		case 3:
+			if (global.guardSecretDialogueExhausted)
+			{
+				handleInnerMonologue(); 
+			}
+			else 
+			{
 			displayGuardMenu();
 			objPlayer.isTalkingToGuard = true;
+			}
 			break;
 	}//end switch
 	
