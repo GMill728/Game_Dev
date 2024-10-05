@@ -19,7 +19,6 @@ function displayActionsMenu() {
 /// @param {real} choice Index of the option selected by player in objDialogueBox
 /// @return {undefined}
 function submitPlayerAction(choice) {
-	
 	//Call appropriate dialogue branch based on player choice
 	switch(choice) {
 		case 0:
@@ -33,16 +32,20 @@ function submitPlayerAction(choice) {
 			objPlayer.isTalkingToPrisoner = true;
 			break;
 		case 3:
+			objPlayer.isTalkingToGuard = true;
 			if (global.guardSecretDialogueExhausted)
 			{
 				handleInnerMonologue(); 
 			}
-			else 
+			else
 			{
-			displayGuardMenu();
-			objPlayer.isTalkingToGuard = true;
+				displayGuardMenu(); 	
 			}
 			break;
+			
+		default:
+			displayActionsMenu(); 
+			break; 
 	}//end switch
 	
 }//end submitPlayerAction
@@ -51,7 +54,6 @@ function submitPlayerAction(choice) {
 /// @desc Handles dialogue branch for opening the door. Presents different options based on whether or not user has key.
 /// @return {undefined}
 function openDoor() {
-	
 	if (objPlayer.hasKey) {
 		objDialogueBox.setDialogue("Congratulations! You have found your way out! Now get back to class!");
 		objDialogueBox.alarm[1] = game_get_speed(gamespeed_fps) * 4; //Destroy the objDialogueBox in 4 seconds

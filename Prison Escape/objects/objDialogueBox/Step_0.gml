@@ -14,11 +14,15 @@ if (textProgress <= textLength) {
 //If space key is pressed, determine appropriate action for text
 if (keyboard_check_pressed(vk_space) ) {
 	
-	if (textProgress < textLength) {
+	if (textProgress < textLength) 
+	{
 		textProgress = textLength;  //Fast forward typewriting to display full message
-	} else if (choice == false) {
+	} 
+	else if (choice == false) 
+	{
 		alarm[0] = 1; //Display Actions Menu
-	}//end if
+	}
+
 	
 //If mouse button is within the Dialogue Box and a selection is clicked, then call Alarm for handling Player input
 } else if (mouse_check_button_pressed(mb_left) && point_in_rectangle(mouseX, mouseY, left, top, right, bottom) ) {

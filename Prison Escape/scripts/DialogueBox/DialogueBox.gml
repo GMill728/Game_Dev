@@ -12,11 +12,28 @@
 function typeText(x, y, text, progress, width) {
 	var charX = 0;  //x position of current char
 	var charY = 0;  //y position of current char
+	var usingItalic = false; 
 	
 	//Draw all chars up to the char index denoted by progress
 	for(var i = 1; i <= progress; i++) {
 		
 		var currChar = string_char_at(text, i); //Get the current char to draw from text
+		
+		if (string_copy(text, i, 3) == "[i]")
+		{
+			draw_set_font(fontItalic); 
+			usingItalic = true; 
+			i += 2; 
+			continue; 
+		}
+		
+		if (string_copy(text, i, 4) == "[/i]")
+		{
+			draw_set_font(font8bit); 
+			usingItalic = false; 
+			i += 3; 
+			continue; 
+		}
 		
 		draw_text(x + charX, y + charY, currChar); //Draw the current char at its appropriate position
 		

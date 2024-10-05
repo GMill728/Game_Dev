@@ -46,11 +46,11 @@ function submitGuardAction(choice)
 		handleSecondAttempt();
 		break;
 		
-	case 3: //Walk Away Branch
+	case 3: //third attempt branch
 		handleThirdAttempt(); 
 		break; 
 		
-	case 4:
+	case 4:	//if player keeps knocking on door
 		handleSilentAttempt();
 		break; 
 		
@@ -112,50 +112,57 @@ function handleInnerMonologue()
 	var monologueText = ""; 
 	if (global.guardSecretDialogueUnlocked && global.guardSecretDialogueExhausted)
 	{
-		monologueText += "Player: \"He's not as I thought. Maybe there's more to him than just a grumpy guard.\""; 		
+		monologueText += "[i]He's not as bad as I thought. Maybe there's more to him than just a grumpy guard.[/i]"; 		
 	}
 	else
 	{
-		monologueText = "Player: \"No point in pushing my luck any further.\""; 
+		monologueText = "No point in pushing my luck any further."; 
 	}
 	objDialogueBox.setDialogue(monologueText); 
 	objPlayer.isTalkingToGuard = false; 
 }
-/// @func handleFirstBranch()
-/// @desc Handles selecting appropriate Guard response based on player progress through the first dialogue branch (ie all first options)
-/// @return {undefined}
+
 function handleSecretDialogue()
 {
 	var guardText = "Guard: \"";
 	
 	switch(global.guardSecretDialogueBranch)
 	{
-	case 0: //How are you? case
+	case 0: 
 		guardText += "Why do you care? It's not like my story will get you out of here.\""; 
 		array_set(global.guardDialogueOptions, 0, "\"............\""); 
 		global.guardSecretDialogueBranch++;		  //Increment dialogue branch to spawn next choice
 		break;
-	case 1: //Do you work here? case
+	case 1: 
 		guardText += "Fine if you must know. I had dreams once, but they faded long ago with my ambition. " +
 					 "Now I'm stuck with cursed duty, dealing with annoying prisoners like you.\""; 
 		array_set(global.guardDialogueOptions, 0, "\"What kind of dreams did you have?\""); //Replace previous first option
-		global.guardSecretDialogueBranch++;													   //Increment dialogue branch to spawn next choice
+		global.guardSecretDialogueBranch++;					
 		break;
-	case 2:
-		guardText += "They were of glory and honor on the battlefield. I was young, a fierce fighter with pride " +
-					 "But after a skirmish left me with an arrow to the knee, those dreams turned to dust.\""; 
-		array_set(global.guardDialogueOptions, 0, "\"..........\""); 
+	case 2: 
+		guardText += ".............\""; 
+		array_set(global.guardDialogueOptions, 0, "\"..........\"");
 		global.guardSecretDialogueBranch++; 
 		break; 
-	case 3: //What do you do around here? case
+	case 3: 
+		guardText += "......Dreams....."
+		array_set(global.guardDialogueOptions, 0, "\"..........\"");
+		global.guardSecretDialogueBranch++;
+		break;
+	case 4:
+		guardText += "They were of glory and honor on the battlefield. I was young, a fierce fighter with pride " +
+					 "But after a skirmish left me with an arrow to the knee, those dreams turned to dust.\""; 
+		array_set(global.guardDialogueOptions, 0, "\"............\"");
+		global.guardSecretDialogueBranch++; 
+		break; 
+	case 5:
 		guardText += " You know, I suppose we all have our own burden to bear. " +
 		                "Even those stuck behind bars like you.\""; 
-		objPlayer.isTalkingToGuard = false; //end converstation
+		array_set(global.guardDialogueOptions, 0, "\".......\"");
 		global.guardSecretDialogueExhausted = true; 
+		objPlayer.isTalkingToGuard = false; 
 		break;
 	}//end switch
-	
 	objDialogueBox.setDialogue(guardText, global.guardDialogueOptions);
-
 }//end handleFirstBranch
 

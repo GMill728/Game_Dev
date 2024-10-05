@@ -57,6 +57,7 @@ function setDialogue(dialogueText, choices = []) {
 		text += "\n\nPress spacebar to continue..."; //Append user instructions
 		choice = false;                              //Indicate no choice
 		options = [];	                             //Clear previous user options
+		
 	} else { //Choices case
 		choice = true;                                              //Indicate choice present
 		options = [];												//Clear options array
