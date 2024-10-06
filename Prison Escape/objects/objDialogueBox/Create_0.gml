@@ -8,7 +8,7 @@ screenH = window_get_height();
 
 //Box and text margins
 margin = 8;
-padding = 64;
+padding = 32;
 
 
 // Box Dimensions

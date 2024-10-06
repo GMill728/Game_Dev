@@ -8,14 +8,21 @@ global.guardInteractionAttempts = 0;
 global.guardSecretDialogueUnlocked = false; 
 global.guardSecretDialogueBranch = 0; 
 global.guardSecretDialogueExhausted = false; 
+global.disableGuard = false;
 
 /// @func displayGuardMenu()
 /// @desc Displays the Guard dialogue menu to the player using objDialogueBox
 /// @return {undefined}
 function displayGuardMenu(){
-	if (global.guardSecretDialogueExhausted)
+	if (objPlayer.hasStone && objPlayer.hasChisel && objPlayer.hasTalkedToPrisoner)
+	{
+		array_set(global.guardDialogueOptions, 0, "Secretly throw stone.");
+		global.guardSecretDialogueExhausted = false;
+	}
+	if (global.guardSecretDialogueExhausted || global.disableGuard)
 	{
 		handleInnerMonologue(); 
+		objPlayer.isTalkingToGuard = false;
 		return; 
 	}
 	objDialogueBox.setDialogue("", global.guardDialogueOptions);
@@ -26,8 +33,16 @@ function displayGuardMenu(){
 /// @param {real} choice Index of the option selected by player in objDialogueBox
 /// @return {undefined}
 /// @modified by Wilfred
+/// @modifier by William
 function submitGuardAction(choice) 
 {
+	if (objPlayer.hasTalkedToPrisoner && !global.disableGuard)
+	{
+		throwStone();
+		objPlayer.isTalkingToGuard = false;
+		return;
+	}
+	
 	if (global.guardSecretDialogueUnlocked)
 	{
 		handleSecretDialogue(); // Unlock secret dialogue if triggered
@@ -64,9 +79,24 @@ function submitGuardAction(choice)
 			unlockSecretDialogue();
 		}
 		break; 
+		
 	}//end switch
 	
 }//end submitGuardAction
+
+/// @func throwStone()
+/// @desc Display dialogue and remove stone for distracting guard
+// @return {undefined}
+// @creator William
+function throwStone()
+{
+	var guardText = "You throw the stone, and it flies through the window and hits a far wall, noises singing from it. The guard gets up and grumbles, going over to check what it is.";
+	objPlayer.hasGuardDistracted = true;
+	objPlayer.isTalkingToGuard = false;
+	global.disableGuard = true;
+	objDialogueBox.setDialogue(guardText);
+}
+
 
 /// @func handleFirstAttempt()
 /// @desc Display dialogue for the first knock attempt
@@ -110,13 +140,17 @@ function unlockSecretDialogue()
 function handleInnerMonologue()
 {
 	var monologueText = ""; 
-	if (global.guardSecretDialogueUnlocked && global.guardSecretDialogueExhausted)
+	if (!objPlayer.hasTalkedToPrisoner && objPlayer.hasStone && objPlayer.hasChisel)
 	{
-		monologueText += "Player: \"He's not as I thought. Maybe there's more to him than just a grumpy guard.\""; 		
+		monologueText += "I've got the stone and chisel, but something still feels missing... Maybe that cryptic fool knows what's next.";
+	} 
+	else if (global.guardSecretDialogueUnlocked && global.guardSecretDialogueExhausted)
+	{
+		monologueText += "He's not as I thought. Maybe there's more to him than just a grumpy guard."; 		
 	}
 	else
 	{
-		monologueText = "Player: \"No point in pushing my luck any further.\""; 
+		monologueText = "No point in pushing my luck any further."; 
 	}
 	objDialogueBox.setDialogue(monologueText); 
 	objPlayer.isTalkingToGuard = false; 
@@ -149,10 +183,11 @@ function handleSecretDialogue()
 		break; 
 	case 3: //What do you do around here? case
 		guardText += " You know, I suppose we all have our own burden to bear. " +
-		                "Even those stuck behind bars like you.\""; 
+		                "Even those stuck behind bars like you.\"";
+		objDialogueBox.setDialogue(guardText);
 		objPlayer.isTalkingToGuard = false; //end converstation
 		global.guardSecretDialogueExhausted = true; 
-		break;
+		return;
 	}//end switch
 	
 	objDialogueBox.setDialogue(guardText, global.guardDialogueOptions);

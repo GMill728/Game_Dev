@@ -97,6 +97,7 @@
     {"id":{"name":"Actions","path":"scripts/Actions/Actions.yy",},},
     {"id":{"name":"DialogueBox","path":"scripts/DialogueBox/DialogueBox.yy",},},
     {"id":{"name":"GuardDialogue","path":"scripts/GuardDialogue/GuardDialogue.yy",},},
+    {"id":{"name":"InspectDialogue","path":"scripts/InspectDialogue/InspectDialogue.yy",},},
     {"id":{"name":"PrisonerDialogue","path":"scripts/PrisonerDialogue/PrisonerDialogue.yy",},},
     {"id":{"name":"seqFadeIn_Events1","path":"scripts/seqFadeIn_Events1/seqFadeIn_Events1.yy",},},
     {"id":{"name":"seqFadeIn","path":"sequences/seqFadeIn/seqFadeIn.yy",},},
