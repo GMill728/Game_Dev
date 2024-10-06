@@ -52,6 +52,7 @@
     {"id":{"name":"fontAragon","path":"fonts/fontAragon/fontAragon.yy",},},
     {"id":{"name":"fontArcade","path":"fonts/fontArcade/fontArcade.yy",},},
     {"id":{"name":"fontButton","path":"fonts/fontButton/fontButton.yy",},},
+    {"id":{"name":"fontItalic","path":"fonts/fontItalic/fontItalic.yy",},},
     {"id":{"name":"fontMenu","path":"fonts/fontMenu/fontMenu.yy",},},
     {"id":{"name":"fontNearMyth","path":"fonts/fontNearMyth/fontNearMyth.yy",},},
     {"id":{"name":"fontNearMythLegends","path":"fonts/fontNearMythLegends/fontNearMythLegends.yy",},},
