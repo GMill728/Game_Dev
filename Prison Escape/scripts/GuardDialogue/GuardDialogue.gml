@@ -160,8 +160,7 @@ function handleSecretDialogue()
 		global.guardSecretDialogueBranch++; 
 		break; 
 	case 5:
-		guardText += " You know, I suppose we all have our own burden to bear. " +
-		                "Even those stuck behind bars like you.\""; 
+		guardText += " You know, I suppose we all have our own burden to bear. "; 
 		objDialogueBox.setDialogue(guardText);
 		objPlayer.isTalkingToGuard = false; //end converstation
 		global.guardSecretDialogueExhausted = true; 

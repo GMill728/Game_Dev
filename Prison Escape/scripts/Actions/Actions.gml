@@ -32,8 +32,8 @@ function submitPlayerAction(choice) {
 			objPlayer.isTalkingToPrisoner = true;
 			break;
 		case 3:
-			displayGuardMenu(); 
-			objPlayer.isTalkingToGuard = true; 
+			objPlayer.isTalkingToGuard = true;
+			displayGuardMenu();	
 			break;
 			
 		default:
@@ -48,11 +48,14 @@ function submitPlayerAction(choice) {
 /// @return {undefined}
 function chiselCrack() {
 	
-	if (objPlayer.hasChisel && objPlayer.hasGuardDistracted) {
+	if (objPlayer.hasChisel && objPlayer.hasGuardDistracted) 
+	{
 		objDialogueBox.setDialogue("A chip, chip, chip... and that's just enough to get out before the guard sees.\nCongratulations! You won!");
-	} else {
-		objDialogueBox.setDialogue("\"Hmmm... This door seems to be locked\"");
-	}//end if
+		objDialogueBox.alarm[1] = game_get_speed(gamespeed_fps) * 4; //Destroy the objDialogueBox in 4 seconds
+	} else if (objPlayer.hasChisel && !objPlayer.hasGuardDistracted)  {
+		objDialogueBox.setDialogue("He'd hear me if I chiseled the wall... I have to do something first.");
+	}
+		
 	
 }//end openDoor
 
