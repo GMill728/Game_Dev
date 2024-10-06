@@ -2,15 +2,16 @@
 /// @author William Grant
 //  Griffen Nya created the strucure of the code which is heavily used here
 //  Date Created by Griffen: 3/21/24
-//  Date Edited by William: 10/6/24
+//  Date Edited/Completed by William: 10/6/24
 //  Leaving as many comments as possible from the original and editing description for ease of use
+//  Very messy, clean as needed.
 global.inspectDialogueOptions = ["Look at straw pile.", "Look at loose bricks.", "Walk away."];
 global.disableStraw = false;
 global.disableBrick = false;
 
 
 /// @func displayInspectMenu()
-/// @desc Displays the Prisoner dialogue menu to the player using objDialogueBox
+/// @desc Displays the Inspect dialogue menu to the player using objDialogueBox
 /// @return {undefined}
 function displayInspectMenu(){
 	objDialogueBox.setDialogue("There's some interesting things around...",global.inspectDialogueOptions);

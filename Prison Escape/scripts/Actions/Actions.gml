@@ -1,7 +1,8 @@
 /// @file Handles the Dialogue Branching and game logic for all player actions in a text-based implementation of the game. Script to be deprecated in future version of the game.
 /// @author Griffin Nye
 //  Date Created: 3/21/24
-//  Last Date Modified: 9/22/24
+//  Last Date Modified: 10/6/24 by William. Previously by Gavin, Wilfred.
+//  Please clean up comments/code as you see fit. Try not to break anything, ask if anything unclear!
 
 /*** NOTE: This Script will be deprecated once Movement and Collision are implemented, however, is very important for ensuring all of your game logic is mapped out appropriately. ***/
 
@@ -41,8 +42,8 @@ function submitPlayerAction(choice) {
 	
 }//end submitPlayerAction
 
-/// @func openDoor()
-/// @desc Handles dialogue branch for opening the door. Presents different options based on whether or not user has key.
+/// @func chiselCrack
+/// @desc Handles dialogue branch for chiseling the crack. Presents different dialogue for not having chisel, for not having guard distracted, and for having both.
 /// @return {undefined}
 function chiselCrack() {
 	

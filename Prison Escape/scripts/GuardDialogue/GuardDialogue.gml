@@ -1,7 +1,7 @@
 /// @file Handles the Dialogue Branching and game logic for all interaction with the Guard. 
 /// @author Griffin Nye
 //  Date Created: 3/21/24
-//  Last Date Modified: 9/22/24
+//  Last Date Modified: 10/6/24 by William. Mostly done by Wilfred.
 
 global.guardDialogueOptions = ["Knock on door"]; //Base Dialogue Options
 global.guardInteractionAttempts = 0;
@@ -33,7 +33,7 @@ function displayGuardMenu(){
 /// @param {real} choice Index of the option selected by player in objDialogueBox
 /// @return {undefined}
 /// @modified by Wilfred
-/// @modifier by William
+/// @modified by William
 function submitGuardAction(choice) 
 {
 	if (objPlayer.hasTalkedToPrisoner && !global.disableGuard)

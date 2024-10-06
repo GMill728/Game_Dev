@@ -3,6 +3,7 @@
 //  Griffen Nya created the strucure of the code which is heavily used here
 //  Date Created by Griffen: 3/21/24
 //  Date Edited by Gavin: 10/3/24
+//  Date Edited by William: 10/6/24 - I'm sorry the code looks awful now but it works.
 //  Leaving as many comments as possible from the original and editing description for ease of use
 global.prisonerThirdDialogueBranch = 0;
 global.prisonerFourthDialogueBranch = 0;
@@ -129,14 +130,14 @@ function submitPrisonerAction(choice) {
 	
 }//end submitPrisonerAction
 
-/// @func askToGetOut()
+/// @func whoAreYou()
 /// @desc Handles Prisoner response to player asking who they are
 /// @return {undefined}
 function whoAreYou() {
 	objDialogueBox.setDialogue("Mysterious Prisoner: \"A name long forgotten, a soul bound by shadows. I am but a whisper in the dark, a keeper of secrets that time has left behind\"");
 }//end whoAreYou
 
-/// @func askForADrink()
+/// @func darkRoom()
 /// @desc Handles Prisoner response to player asking to order a drink and presents player with drink options.
 /// @return {undefined}
 function darkRoom() {
@@ -157,7 +158,9 @@ var drinkOptions = ["\"Could I get a ginger ale?\"", "\"Do you have any root bee
 
 
 
-
+/// @func escapeQ
+/// @desc Handles the hints for the stone.
+/// @return {undefined}
 function escapeQ() {
     var prisonerText = "Mysterious Prisoner: \"";
 
@@ -192,6 +195,9 @@ function escapeQ() {
     objDialogueBox.setDialogue(prisonerText, global.prisonerDialogueOptions);
 }
 
+/// @func stoneBranch()
+/// @desc Handles the hints for the chisel.
+/// @return {undefined}
 function stoneBranch() {
     var prisonerText = "Mysterious Prisoner: \"";
 
@@ -223,6 +229,9 @@ function stoneBranch() {
     objDialogueBox.setDialogue(prisonerText, global.prisonerDialogueOptions);
 }
 
+/// @func chiselBranch()
+/// @desc Handles the hints for the guard distraction.
+/// @return {undefined}
 function chiselBranch() {
     var prisonerText = "Mysterious Prisoner: \"";
 	
@@ -232,7 +241,10 @@ function chiselBranch() {
 	objPlayer.isTalkingToPrisoner = false;
     //objPlayer.hasGuardDistracted = true;  // guard distracted COMMENT THIS OUT FOR IMPLEMENTATION BILL
 }
-	
+
+/// @func guardBranch()
+/// @desc Final dialogue.
+/// @return {undefined}	
 function guardBranch() {
     var prisonerText = "Mysterious Prisoner: \"";
 	
