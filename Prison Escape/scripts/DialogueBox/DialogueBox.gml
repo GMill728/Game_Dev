@@ -9,6 +9,7 @@
 /// @param {real} progress The index of the last char within text to display for this frame
 /// @param {real} width The width of the area within the Dialogue Box for text to be displayed in
 /// @return {undefined}
+///@modified by Wilfred
 function typeText(x, y, text, progress, width) {
 	var charX = 0;  //x position of current char
 	var charY = 0;  //y position of current char

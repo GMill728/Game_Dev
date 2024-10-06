@@ -3,6 +3,7 @@
 //  Griffen Nya created the strucure of the code which is heavily used here
 //  Date Created by Griffen: 3/21/24
 //  Date Edited by Gavin: 10/3/24
+//  Date Edited by William: 10/6/24 - I'm sorry the code looks awful now but it works.
 //  Leaving as many comments as possible from the original and editing description for ease of use
 global.prisonerThirdDialogueBranch = 0;
 global.prisonerFourthDialogueBranch = 0;
@@ -18,7 +19,23 @@ global.prisonerDialogueOptions = ["\"Who are you, and what brings you here?\"", 
 /// @desc Displays the Prisoner dialogue menu to the player using objDialogueBox
 /// @return {undefined}
 function displayPrisonerMenu(){
+	if (objPlayer.hasStone && global.prisonerFourthDialogueBranch == 0)
+	{
+		global.prisonerDialogueBranch = 1;
+		array_set(global.prisonerDialogueOptions, 2, "\"Is this what you meant?\"");
+	}
+	if (objPlayer.hasChisel && global.prisonerFifthDialogueBranch == 0)
+	{
+		global.prisonerDialogueBranch = 2;
+		array_set(global.prisonerDialogueOptions, 2, "\"I have both the stone and chisel. What now?\"");
+	}
+	if (objPlayer.hasGuardDistracted && global.prisonerSixthDialogueBranch == 0)
+	{
+		global.prisonerDialogueBranch = 3;
+		array_set(global.prisonerDialogueOptions, 2, "\"The guard is distracted. Now what?\"");
+	}
 	objDialogueBox.setDialogue("Mysterious Prisoner:     ...",global.prisonerDialogueOptions);
+	
 }//end displayPrisonerMenu
 
 /// @func submitPrisonerAction(choice)
@@ -37,6 +54,7 @@ function submitPrisonerAction(choice) {
 			break;
 		case 1:
 			darkRoom();
+			objPlayer.isTalkingToPrisoner = false;
 			break;
 		case 2:
 			escapeQ();
@@ -56,6 +74,7 @@ function submitPrisonerAction(choice) {
 			break;
 		case 1:
 			darkRoom();
+			objPlayer.isTalkingToPrisoner = false;
 			break;
 		case 2:
 			stoneBranch();
@@ -75,6 +94,7 @@ function submitPrisonerAction(choice) {
 			break;
 		case 1:
 			darkRoom();
+			objPlayer.isTalkingToPrisoner = false;
 			break;
 		case 2:
 			chiselBranch();
@@ -95,6 +115,7 @@ function submitPrisonerAction(choice) {
 			break;
 		case 1:
 			darkRoom();
+			objPlayer.isTalkingToPrisoner = false;
 			break;
 		case 2:
 			guardBranch();
@@ -109,14 +130,14 @@ function submitPrisonerAction(choice) {
 	
 }//end submitPrisonerAction
 
-/// @func askToGetOut()
+/// @func whoAreYou()
 /// @desc Handles Prisoner response to player asking who they are
 /// @return {undefined}
 function whoAreYou() {
 	objDialogueBox.setDialogue("Mysterious Prisoner: \"A name long forgotten, a soul bound by shadows. I am but a whisper in the dark, a keeper of secrets that time has left behind\"");
 }//end whoAreYou
 
-/// @func askForADrink()
+/// @func darkRoom()
 /// @desc Handles Prisoner response to player asking to order a drink and presents player with drink options.
 /// @return {undefined}
 function darkRoom() {
@@ -137,7 +158,9 @@ var drinkOptions = ["\"Could I get a ginger ale?\"", "\"Do you have any root bee
 
 
 
-
+/// @func escapeQ
+/// @desc Handles the hints for the stone.
+/// @return {undefined}
 function escapeQ() {
     var prisonerText = "Mysterious Prisoner: \"";
 
@@ -161,11 +184,8 @@ function escapeQ() {
             prisonerText += "Golden whispers hide the truth beneath the shroud of forgotten dreams...\"\n";
 			objDialogueBox.setDialogue(prisonerText);
 			objPlayer.isTalkingToPrisoner = false;
-            objPlayer.hasStone = true;  // got whispering stone  COMMENT THIS OUT FOR IMPLEMENTATION BILL
-			if (objPlayer.hasStone == true)
-			{
-				global.prisonerDialogueBranch = 1;
-			}
+			objPlayer.hasStoneLocation = true;
+            //objPlayer.hasStone = true;  // got whispering stone  COMMENT THIS OUT FOR IMPLEMENTATION BILL
             return;
 			
 			
@@ -175,6 +195,9 @@ function escapeQ() {
     objDialogueBox.setDialogue(prisonerText, global.prisonerDialogueOptions);
 }
 
+/// @func stoneBranch()
+/// @desc Handles the hints for the chisel.
+/// @return {undefined}
 function stoneBranch() {
     var prisonerText = "Mysterious Prisoner: \"";
 
@@ -193,12 +216,10 @@ function stoneBranch() {
             prisonerText += "The edge where stone meets time... Not all walls hold firm forever. Look closely, and you'll see where time has left its mark.\"";
 			objDialogueBox.setDialogue(prisonerText);
 			objPlayer.isTalkingToPrisoner = false;
-            objPlayer.hasChisel = true;  // got whispering stone  COMMENT THIS OUT FOR IMPLEMENTATION BILL
+			objPlayer.hasChiselLocation = true;
+            //objPlayer.hasChisel = true;  // got whispering stone  COMMENT THIS OUT FOR IMPLEMENTATION BILL
 			
-			if (objPlayer.hasChisel == true)
-			{
-				global.prisonerDialogueBranch = 2;
-			}
+
             return;
 			
 			
@@ -208,56 +229,28 @@ function stoneBranch() {
     objDialogueBox.setDialogue(prisonerText, global.prisonerDialogueOptions);
 }
 
+/// @func chiselBranch()
+/// @desc Handles the hints for the guard distraction.
+/// @return {undefined}
 function chiselBranch() {
     var prisonerText = "Mysterious Prisoner: \"";
-
-    switch(global.prisonerFifthDialogueBranch) {
-        case 0:
-            prisonerText += "the lost soul has found his path.\"";
-            array_set(global.prisonerDialogueOptions, 2, "\"I have both the stone and chisel. What now?\"");
-            global.prisonerFifthDialogueBranch++;  // Increment branch
-            break;
-		case 1:
-            prisonerText += "The whispers you've uncovered may travel farther than you think. Sometimes, the right place for them to be heard is just beyond the reach of your grasp.\"";
-			objDialogueBox.setDialogue(prisonerText);
-			objPlayer.isTalkingToPrisoner = false;
-            objPlayer.hasGuardDistracted = true;  // guard distracted COMMENT THIS OUT FOR IMPLEMENTATION BILL
-			
-			
 	
-			if (objPlayer.hasGuardDistracted == true)
-			{
-				global.prisonerDialogueBranch = 3;
-			}
-            return;
-			
-			
-    }
-	
-    // Set the new dialogue
-    objDialogueBox.setDialogue(prisonerText, global.prisonerDialogueOptions);
+	prisonerText += "The whispers you've uncovered may travel farther than you think. Sometimes, the right place for them to be heard is just beyond the reach of your grasp.\"";
+	objDialogueBox.setDialogue(prisonerText);
+	objPlayer.hasTalkedToPrisoner = true;
+	objPlayer.isTalkingToPrisoner = false;
+    //objPlayer.hasGuardDistracted = true;  // guard distracted COMMENT THIS OUT FOR IMPLEMENTATION BILL
 }
-	
+
+/// @func guardBranch()
+/// @desc Final dialogue.
+/// @return {undefined}	
 function guardBranch() {
     var prisonerText = "Mysterious Prisoner: \"";
-
-    switch(global.prisonerSixthDialogueBranch) {
-        case 0:
-            prisonerText += "The glimpse of a hero returns from his small victory\"";
-            array_set(global.prisonerDialogueOptions, 2, "\"The guard is distracted. Now what?\"");
-            global.prisonerSixthDialogueBranch++;  // Increment branch
-            break;
-		case 1:
-            prisonerText += "The path now lies open, as shadows part. Seize the moment, and let the iron carve your way to freedom. \"";
-			objDialogueBox.setDialogue(prisonerText);
-			objPlayer.isTalkingToPrisoner = false;
-            return;
-			
-			
-    }
 	
-    // Set the new dialogue
-    objDialogueBox.setDialogue(prisonerText, global.prisonerDialogueOptions);
+    prisonerText += "The path now lies open, as shadows part. Seize the moment, and let the iron carve your way to freedom. \"";
+	objDialogueBox.setDialogue(prisonerText);
+	objPlayer.isTalkingToPrisoner = false;
 }
 
 
