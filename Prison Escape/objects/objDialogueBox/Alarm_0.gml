@@ -6,6 +6,8 @@ if (choice) {
 		submitPrisonerAction(selected);
 	} else if (objPlayer.isTalkingToGuard) {
 		submitGuardAction(selected);
+	} else if (objPlayer.isInspecting) {
+		submitInspectAction(selected);
 	} else {
 		
 		//Prevent Innkeeper option from being selected while disabled

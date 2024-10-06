@@ -8,3 +8,7 @@ isTalkingToPrisoner = false;
 hasStone = false;
 hasChisel = false;
 hasGuardDistracted = false;
+hasChiselLocation = false;
+hasStoneLocation = false;
+isInspecting = false;
+hasTalkedToPrisoner = false;
