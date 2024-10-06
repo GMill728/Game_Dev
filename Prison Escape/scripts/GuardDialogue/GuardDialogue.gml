@@ -112,7 +112,11 @@ function handleInnerMonologue()
 	var monologueText = ""; 
 	if (global.guardSecretDialogueUnlocked && global.guardSecretDialogueExhausted)
 	{
-		monologueText += "[i]He's not as bad as I thought. Maybe there's more to him than just a grumpy guard.[/i]"; 		
+		monologueText += "I've got the stone and chisel, but something still feels missing... Maybe that cryptic fool knows what's next.";
+	} 
+	else if (global.guardSecretDialogueUnlocked && global.guardSecretDialogueExhausted)
+	{
+		monologueText += "He's not as I thought. Maybe there's more to him than just a grumpy guard."; 		
 	}
 	else
 	{
@@ -158,10 +162,10 @@ function handleSecretDialogue()
 	case 5:
 		guardText += " You know, I suppose we all have our own burden to bear. " +
 		                "Even those stuck behind bars like you.\""; 
-		array_set(global.guardDialogueOptions, 0, "\".......\"");
+		objDialogueBox.setDialogue(guardText);
+		objPlayer.isTalkingToGuard = false; //end converstation
 		global.guardSecretDialogueExhausted = true; 
-		objPlayer.isTalkingToGuard = false; 
-		break;
+		return;
 	}//end switch
 	objDialogueBox.setDialogue(guardText, global.guardDialogueOptions);
 }//end handleFirstBranch
