@@ -14,7 +14,7 @@ global.disableBrick = false;
 /// @desc Displays the Inspect dialogue menu to the player using objDialogueBox
 /// @return {undefined}
 function displayInspectMenu(){
-	objDialogueBox.setDialogue("There's some interesting things around...",global.inspectDialogueOptions);
+	objDialogueBox.setDialogue("[i]There's some interesting things around...[/i]",global.inspectDialogueOptions);
 }//end displayInspectMenu
 
 /// @func submitInspectAction(choice)
@@ -46,17 +46,17 @@ function submitInspectAction(choice) {
 function inspectStraw() {
 	if (global.disableStraw)
 	{
-		objDialogueBox.setDialogue("No wonder I couldn't sleep, this stone whispers like mad.");
+		objDialogueBox.setDialogue("[i]No wonder I couldn't sleep, this stone whispers like mad.[/i]");
 	}
 	else if (objPlayer.hasStoneLocation)
 	{
-		objDialogueBox.setDialogue("Oh, that's why it wasn't very comfortable. There's a stone in here.\nWhispering Stone Acquired!");
+		objDialogueBox.setDialogue("[i]Oh, that's why it wasn't very comfortable. There's a stone in here.[/i]\nWhispering Stone Acquired!");
 		objPlayer.hasStone = true;
 		global.disableStraw  = true;
 	}
 	else
 	{
-		objDialogueBox.setDialogue("Just some hay. It's not very comfortable.");
+		objDialogueBox.setDialogue("[i]Just some hay. It's not very comfortable.[/i]");
 	}
 	
 }//end inspectStraw
@@ -67,17 +67,17 @@ function inspectStraw() {
 function inspectBrick() {
 	if (global.disableBrick)
 	{
-		objDialogueBox.setDialogue("The brick is on the floor, and chisel in hand.");
+		objDialogueBox.setDialogue("[i]The brick is on the floor, and chisel in hand.[/i]");
 	}
 	else if (objPlayer.hasChiselLocation)
 	{
-		objDialogueBox.setDialogue("With enough force, I pull it open... and there's a chisel inside!\nChisel Acquired!");
+		objDialogueBox.setDialogue("[i]With enough force, I pull it open... and there's a chisel inside![/i]\nChisel Acquired!");
 		objPlayer.hasChisel = true;
 		global.disableBrick = true;
 	}
 	else
 	{
-		objDialogueBox.setDialogue("Some loose bricks, but pulling on them is very hard.");
+		objDialogueBox.setDialogue("[i]Some loose bricks, but pulling on them is very hard.[/i]");
 	}
 }//end inspectBrick
 

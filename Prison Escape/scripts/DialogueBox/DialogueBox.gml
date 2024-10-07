@@ -9,7 +9,7 @@
 /// @param {real} progress The index of the last char within text to display for this frame
 /// @param {real} width The width of the area within the Dialogue Box for text to be displayed in
 /// @return {undefined}
-///@modified by Wilfred
+/// @modified by Wilfred
 function typeText(x, y, text, progress, width) {
 	var charX = 0;  //x position of current char
 	var charY = 0;  //y position of current char
@@ -20,7 +20,7 @@ function typeText(x, y, text, progress, width) {
 		
 		var currChar = string_char_at(text, i); //Get the current char to draw from text
 		
-		if (string_copy(text, i, 3) == "[i]")
+		if (string_copy(text, i, 3) == "[i]")	//tag for italicizing text
 		{
 			draw_set_font(fontItalic); 
 			usingItalic = true; 
