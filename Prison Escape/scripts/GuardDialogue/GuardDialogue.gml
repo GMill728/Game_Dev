@@ -142,11 +142,11 @@ function handleInnerMonologue()
 	var monologueText = ""; 
 	if (!objPlayer.hasTalkedToPrisoner && objPlayer.hasStone && objPlayer.hasChisel)
 	{
-		monologueText += "[i] I've got the stone and chisel, but something still feels missing... Maybe that cryptic fool knows what's next.[/i]";
+		monologueText += "I've got the stone and chisel, but something still feels missing... Maybe that cryptic fool knows what's next.";
 	} 
 	else if (global.guardSecretDialogueUnlocked && global.guardSecretDialogueExhausted)
 	{
-		monologueText += "[i]He's not as I thought. Maybe there's more to him than just a grumpy guard.[/i]"; 		
+		monologueText += "He's not as I thought. Maybe there's more to him than just a grumpy guard."; 		
 	}
 	else
 	{

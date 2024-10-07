@@ -18,22 +18,6 @@ function typeText(x, y, text, progress, width) {
 		
 		var currChar = string_char_at(text, i); //Get the current char to draw from text
 		
-		if (string_copy(text, i, 3) == "[i]")
-		{
-			draw_set_font(fontItalic); 
-			usingItalic = true; 
-			i += 2; 
-			continue; 
-		}
-		
-		if (string_copy(text, i, 4) == "[/i]")
-		{
-			draw_set_font(font8bit); 
-			usingItalic = false; 
-			i += 3; 
-			continue; 
-		}
-		
 		draw_text(x + charX, y + charY, currChar); //Draw the current char at its appropriate position
 		
 		charX += string_width(currChar); //Increment x position by width of current char to get next x position
