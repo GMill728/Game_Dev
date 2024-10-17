@@ -168,7 +168,7 @@ function handleInnerMonologue()
 	} 
 	else if (global.guardSecretDialogueUnlocked && global.guardSecretDialogueExhausted)
 	{
-		monologueText += "[i]He's not as I thought. Maybe there's more to him than just a grumpy guard.[/i]"; 		
+		monologueText += "[i]He's not as bad as I thought. Maybe there's more to him than just a grumpy guard.[/i]"; 		
 	}
 	else
 	{
