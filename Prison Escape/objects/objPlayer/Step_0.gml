@@ -1,27 +1,33 @@
 //@Creator Griffin Nye
 //@Modified by Wilfred
 
+
+var vsp = 0; 
+var hsp = 0; 
+
 if (keyboard_check(ord("A")) )
 {
 	sprite_index = charWalkLeft;
-	x -= 4;
+	hsp = -moveSpeed;
 } 
 else if (keyboard_check(ord("D")) ) 
 {
 	sprite_index = charWalkRight;
-	x += 4; 
+	hsp = moveSpeed; 
 } 
 else if (keyboard_check(ord("S")) ) 
 {
 	sprite_index = charWalkDown;
-	y += 4; 
+	vsp = moveSpeed; 
 } 
 else if (keyboard_check(ord("W")) ) 
 {
 	sprite_index = charWalkUp;
-	y -= 4; 
+	vsp = -moveSpeed; 
 } 
-else if (keyboard_check_released(ord("A")) ) {
+
+//Handle character idle animations
+if (keyboard_check_released(ord("A")) ) {
 	sprite_index = charIdleLeft;
 } 
 else if (keyboard_check_released(ord("D")) ) {
@@ -33,3 +39,16 @@ else if (keyboard_check_released(ord("S")) ) {
 else if (keyboard_check_released(ord("W")) ) {
 	sprite_index = charIdleUp;
 }//end if
+
+//collisions with objWall
+
+if(place_meeting(x + hsp, y, objWallCollision)) {
+	hsp = 0; 
+}
+
+if(place_meeting(x, y + vsp, objWallCollision)){
+	vsp = 0; 
+}
+
+x += hsp; 
+y += vsp; 

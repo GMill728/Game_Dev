@@ -12,3 +12,5 @@ hasChiselLocation = false;
 hasStoneLocation = false;
 isInspecting = false;
 hasTalkedToPrisoner = false;
+
+moveSpeed = 4; 
