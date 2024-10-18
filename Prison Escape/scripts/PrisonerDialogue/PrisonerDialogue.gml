@@ -15,7 +15,11 @@ global.prisonerDialogueBranch = 0;
 global.prisonerDisabled = false;
 global.prisonerDialogueOptions = ["\"Who are you, and what brings you here?\"", "\"Why is this room shrouded in such darkness?\"", "\"Is there any hope to escape from this hell, or are we doomed ?\"","Walk away"];
 
-
+/*
+if (objPlayer.isTalkingToPrisoner = true){
+			displayPrisonerMenu();
+			}
+			*/
 /// @func displayPrisonerMenu()
 /// @desc Displays the Prisoner dialogue menu to the player using objDialogueBox
 /// @return {undefined}

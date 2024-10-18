@@ -15,6 +15,15 @@ global.disableGuard = false;
 /// @return {undefined}
 /// @Modified by Wilfred on 10/03/24
 /// @Modified by William
+/*
+
+if(objPlayer.isTalkingToGuard = true){
+			displayGuardMenu();	
+}
+*/
+
+
+
 function displayGuardMenu(){
 	if (objPlayer.hasStone && objPlayer.hasChisel && objPlayer.hasTalkedToPrisoner)
 	{

@@ -8,8 +8,11 @@
 global.inspectDialogueOptions = ["Look at straw pile.", "Look at loose bricks.", "Walk away."];
 global.disableStraw = false;
 global.disableBrick = false;
-
-
+/*
+if (objPlayer.isInspecting = true) {
+			displayInspectMenu();
+}
+*/
 /// @func displayInspectMenu()
 /// @desc Displays the Inspect dialogue menu to the player using objDialogueBox
 /// @return {undefined}

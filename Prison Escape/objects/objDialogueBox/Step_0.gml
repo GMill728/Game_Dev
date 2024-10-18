@@ -20,7 +20,7 @@ if (keyboard_check_pressed(vk_space) ) {
 	} 
 	else if (choice == false) 
 	{
-		alarm[0] = 1; //Display Actions Menu
+		alarm[1] = 1; //Display Actions Menu
 	}
 
 	

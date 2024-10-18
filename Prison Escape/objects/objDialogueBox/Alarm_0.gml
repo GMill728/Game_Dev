@@ -20,8 +20,10 @@ if (choice) {
 		
 	}//end if
 	
-} else { //If no choices presented, display Actions Menu by default
+} 
+
+//else { //If no choices presented, display Actions Menu by default
 	
-	displayActionsMenu();
+//	displayActionsMenu();
 	
-}//end if
+//}//end if
