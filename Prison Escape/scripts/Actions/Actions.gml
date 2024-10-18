@@ -48,18 +48,7 @@ function submitPlayerAction(choice) {
 /// @func chiselCrack
 /// @desc Handles dialogue branch for chiseling the crack. Presents different dialogue for not having chisel, for not having guard distracted, and for having both.
 /// @return {undefined}
-function chiselCrack() {
-	
-	if (objPlayer.hasChisel && objPlayer.hasGuardDistracted) {
-		objDialogueBox.setDialogue("A chip, chip, chip... and that's just enough to get out before the guard sees.\nCongratulations! You won!");
-		objDialogueBox.alarm[1] = game_get_speed(gamespeed_fps) * 4; //Destroy the objDialogueBox in 4 seconds
-	} else if (objPlayer.hasChisel && !objPlayer.hasGuardDistracted)  {
-		objDialogueBox.setDialogue("[i]He'd hear me if I chiseled the wall... I have to do something first.[/i]");
-	} else {
-		objDialogueBox.setDialogue("[i]A crack in the wall... it has a small draft coming from it.[/i]");
-	}//end if
-	
-}//end openDoor
+
 
 /// @func openDoor()
 /// @desc Handles dialogue branch for inspecting the rug. Presents different options based on whether or not user has received key location from the Watchman.

@@ -96,6 +96,7 @@
     {"id":{"name":"PlayRoom","path":"rooms/PlayRoom/PlayRoom.yy",},},
     {"id":{"name":"StudioRoom","path":"rooms/StudioRoom/StudioRoom.yy",},},
     {"id":{"name":"Actions","path":"scripts/Actions/Actions.yy",},},
+    {"id":{"name":"Chisel","path":"scripts/Chisel/Chisel.yy",},},
     {"id":{"name":"DialogueBox","path":"scripts/DialogueBox/DialogueBox.yy",},},
     {"id":{"name":"GuardDialogue","path":"scripts/GuardDialogue/GuardDialogue.yy",},},
     {"id":{"name":"InspectDialogue","path":"scripts/InspectDialogue/InspectDialogue.yy",},},
