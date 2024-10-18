@@ -20,7 +20,11 @@ if (keyboard_check_pressed(vk_space) ) {
 	} 
 	else if (choice == false) 
 	{
-		alarm[1] = 1; //Display Actions Menu
+		if (objPlayer.hasWon) {
+			room_goto(Credits);
+		} else {
+			alarm[1] = 1; //Display Actions Menu
+		}//end if
 	}
 
 	
