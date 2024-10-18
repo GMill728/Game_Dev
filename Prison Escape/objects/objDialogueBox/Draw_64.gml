@@ -8,8 +8,6 @@
 //      Also, make sure that if you are using a viewport for one room, you enable them for ALL rooms, (including
 //      your intro sequence room) and set the viewports to the same size (verying Camera size doesn't matter). If you run into
 //      issues where GameMaker ignores your Font size, check that is configured properly
-
-
 //Draw the Dialogue Box sprite
 draw_sprite_stretched(sprDialogueBox, 0, left, top, width, height);
 

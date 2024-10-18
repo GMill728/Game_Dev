@@ -1,8 +1,8 @@
 //Created by Professor Griffen Nye
 
 /*** Positioning Variables ***/
-
 //GUI Dimensions
+
 screenW = window_get_width();  //If these two functions give you issues, call them in Draw GUI event
 screenH = window_get_height();
 

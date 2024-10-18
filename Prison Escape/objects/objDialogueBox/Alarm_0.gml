@@ -1,6 +1,7 @@
 /// @description Handles submitting player choices to the appropriate dialogue branch script
 
 if (choice) {
+	alarm [2] = 1;
 	
 	if(objPlayer.isTalkingToPrisoner) {
 		submitPrisonerAction(selected);
