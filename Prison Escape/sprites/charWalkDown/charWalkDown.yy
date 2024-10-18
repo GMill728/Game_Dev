@@ -1,9 +1,9 @@
 {
   "$GMSprite":"",
   "%Name":"charWalkDown",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":65,
-  "bbox_left":16,
+  "bbox_left":14,
   "bbox_right":47,
   "bbox_top":0,
   "collisionKind":1,

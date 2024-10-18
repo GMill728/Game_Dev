@@ -1,8 +1,8 @@
 {
   "$GMSprite":"",
   "%Name":"charWalkLeft",
-  "bboxMode":0,
-  "bbox_bottom":63,
+  "bboxMode":2,
+  "bbox_bottom":65,
   "bbox_left":12,
   "bbox_right":49,
   "bbox_top":0,
