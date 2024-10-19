@@ -24,7 +24,7 @@ bottom = screenH - 20;  // Set a 20-pixel margin from the bottom
 top = bottom - height;  // Adjust the top based on the box height
 
 /*** Text Variables ***/
-text = " The dungeon cell is dark and dreary, with rough stone walls covered in damp moss.\n" +
+text= " The dungeon cell is dark and dreary, with rough stone walls covered in damp moss.\n" +
        "You raise your hand in front of your eyes and can barely make out your fingers\n" +
 	   "The air is musty and smells of mold, with the only sound being the occasional drip of water from the ceiling. \n" + 
 	   "\n\nPress spacebar to continue...";
