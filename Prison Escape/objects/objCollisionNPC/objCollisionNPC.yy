@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"objWallCollision",
+  "%Name":"objCollisionNPC",
   "eventList":[],
   "managed":true,
-  "name":"objWallCollision",
+  "name":"objCollisionNPC",
   "overriddenProperties":[],
   "parent":{
     "name":"Collision",
@@ -29,14 +29,14 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":false,
+  "solid":true,
   "spriteId":{
-    "name":"sprCollision",
-    "path":"sprites/sprCollision/sprCollision.yy",
+    "name":"sprCollisionNPC",
+    "path":"sprites/sprCollisionNPC/sprCollisionNPC.yy",
   },
   "spriteMaskId":{
-    "name":"sprCollision",
-    "path":"sprites/sprCollision/sprCollision.yy",
+    "name":"sprCollisionNPC",
+    "path":"sprites/sprCollisionNPC/sprCollisionNPC.yy",
   },
   "visible":false,
 }
