@@ -7,11 +7,11 @@ isTalkingToGuard = false;
 isTalkingToPrisoner = false;
 hasStone = false;
 hasChisel = false;
-hasGuardDistracted = true;
-hasChiselLocation = true;
-hasStoneLocation = true;
+hasGuardDistracted = false;
+hasChiselLocation = false;
+hasStoneLocation = false;
 isInspecting = false;
-hasTalkedToPrisoner = true;
+hasTalkedToPrisoner = false;
 hasWon = false;
 
 hsp = 0;

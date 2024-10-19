@@ -4,3 +4,4 @@ hasChisel = true;
 instance_destroy(other);
 drawBox();
 objDialogueBox.setDialogue("***You found the chisel!***");
+global.prisonerDialogueBranch = 2;

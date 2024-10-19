@@ -26,7 +26,6 @@ global.prisonerDialogueOptions = ["\"Who are you, and what brings you here?\"", 
 /// @return {undefined}
 function submitPrisonerAction(choice) {//This is the main tree for the prisoner dialogue which handles switching to different branches throughout the dialogue progress
 	//Written by Gavin Mills
-	
 	//Change set of possible functions based on the Prisoner's dialogue branch
 	if (global.prisonerDialogueBranch == 0) { //Default Branch
 	
