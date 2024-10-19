@@ -30,12 +30,13 @@ function displayGuardMenu(){
 		array_set(global.guardDialogueOptions, 0, "Secretly throw stone.");
 		global.guardSecretDialogueExhausted = false;
 	}
-	if (global.guardSecretDialogueExhausted || global.disableGuard)
+	 if (global.guardSecretDialogueExhausted || global.disableGuard)
 	{
 		handleInnerMonologue(); 
 		objPlayer.isTalkingToGuard = false;
 		return; 
 	}
+	
 	objDialogueBox.setDialogue("", global.guardDialogueOptions);
 }//end displayGuardMenu
 
