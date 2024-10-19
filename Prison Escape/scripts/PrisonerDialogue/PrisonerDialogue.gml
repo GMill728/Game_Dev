@@ -15,34 +15,10 @@ global.prisonerDialogueBranch = 0;
 global.prisonerDisabled = false;
 global.prisonerDialogueOptions = ["\"Who are you, and what brings you here?\"", "\"Why is this room shrouded in such darkness?\"", "\"Is there any hope to escape from this hell, or are we doomed ?\"","Walk away"];
 
-
-//if (objPlayer.isTalkingToPrisoner == true)
-//{
-//			displayPrisonerMenu();
-//			}
-
 /// @func displayPrisonerMenu()
 /// @desc Displays the Prisoner dialogue menu to the player using objDialogueBox
 /// @return {undefined}
-function displayPrisonerMenu(){ //this is the fourth dialogue branch for the prisoner written by Gavin Mills
-	if (objPlayer.hasStone && global.prisonerFourthDialogueBranch == 0)
-	{
-		global.prisonerDialogueBranch = 1;
-		array_set(global.prisonerDialogueOptions, 2, "\"Is this what you meant?\"");
-	}
-	if (objPlayer.hasChisel && global.prisonerFifthDialogueBranch == 0)
-	{
-		global.prisonerDialogueBranch = 2;
-		array_set(global.prisonerDialogueOptions, 2, "\"I have both the stone and chisel. What now?\"");
-	}
-	if (objPlayer.hasGuardDistracted && global.prisonerSixthDialogueBranch == 0)
-	{
-		global.prisonerDialogueBranch = 3;
-		array_set(global.prisonerDialogueOptions, 2, "\"The guard is distracted. Now what?\"");
-	}
-	objDialogueBox.setDialogue("Mysterious Prisoner:     ...",global.prisonerDialogueOptions);
-	
-}//end displayPrisonerMenu
+
 
 /// @func submitPrisonerAction(choice)
 /// @desc Handles calling appropriate Prisoner dialogue branch based on player's selection in objDialogueBox
@@ -137,6 +113,8 @@ function submitPrisonerAction(choice) {//This is the main tree for the prisoner 
 	
 }//end submitPrisonerAction
 
+
+
 /// @func whoAreYou()
 /// @desc Handles Prisoner response to player asking who they are
 /// @return {undefined}
@@ -150,18 +128,6 @@ function whoAreYou() {//this is a simple dialogue option written by Gavin Mills
 function darkRoom() {//this is a simple dialogue option written by Gavin Mills
 	objDialogueBox.setDialogue("Mysterious Prisoner: \"This darkness holds us because we're at the bottom, where no light dares to reach. For those cast this low, there is no salvation, darkness being our only companion.\"");
 }//end darkRoom
-
-/*
-var drinkOptions = ["\"Could I get a ginger ale?\"", "\"Do you have any root beer?\""];
-	global.prisonerDialogueBranch = 1; //Change branch to drink ordering branch
-	objDialogueBox.setDialogue("Prisoner: \"You sure can, partner! What can I 'getcha?\"", drinkOptions);
-
-
-
-
-//this is a way to create small options
-//@desc Handles Prisoner response to player ordering a ginger ale. Ends interaction with Prisoner.
-*/
 
 
 
@@ -192,7 +158,7 @@ function escapeQ() { //this is the third dialogue branch for the prisoner writte
 			objDialogueBox.setDialogue(prisonerText);
 			objPlayer.isTalkingToPrisoner = false;
 			objPlayer.hasStoneLocation = true;
-            //objPlayer.hasStone = true;  // got whispering stone  COMMENT THIS OUT FOR IMPLEMENTATION BILL
+
             return;
 			
 			
@@ -202,6 +168,27 @@ function escapeQ() { //this is the third dialogue branch for the prisoner writte
     objDialogueBox.setDialogue(prisonerText, global.prisonerDialogueOptions);
 }
 
+
+
+function displayPrisonerMenu(){ //this is the fourth dialogue branch for the prisoner written by Gavin Mills
+	if (objPlayer.hasStone && global.prisonerFourthDialogueBranch == 0)
+	{
+		global.prisonerDialogueBranch = 1;
+		array_set(global.prisonerDialogueOptions, 2, "\"Is this what you meant?\"");
+	}
+	if (objPlayer.hasChisel && global.prisonerFifthDialogueBranch == 0)
+	{
+		global.prisonerDialogueBranch = 2;
+		array_set(global.prisonerDialogueOptions, 2, "\"I have both the stone and chisel. What now?\"");
+	}
+	if (objPlayer.hasGuardDistracted && global.prisonerSixthDialogueBranch == 0)
+	{
+		global.prisonerDialogueBranch = 3;
+		array_set(global.prisonerDialogueOptions, 2, "\"The guard is distracted. Now what?\"");
+	}
+	objDialogueBox.setDialogue("Mysterious Prisoner:     ...",global.prisonerDialogueOptions);
+	
+}//end displayPrisonerMenu
 /// @func stoneBranch()
 /// @desc Handles the hints for the chisel.
 /// @return {undefined}
@@ -224,7 +211,6 @@ function stoneBranch() { //this is the fifth dialogue branch for the prisoner wr
 			objDialogueBox.setDialogue(prisonerText);
 			objPlayer.isTalkingToPrisoner = false;
 			objPlayer.hasChiselLocation = true;
-            //objPlayer.hasChisel = true;  // got whispering stone  COMMENT THIS OUT FOR IMPLEMENTATION BILL
 			
 
             return;
@@ -246,7 +232,6 @@ function chiselBranch() { //this is the sixth dialogue branch for the prisoner w
 	objDialogueBox.setDialogue(prisonerText);
 	objPlayer.hasTalkedToPrisoner = true;
 	objPlayer.isTalkingToPrisoner = false;
-    //objPlayer.hasGuardDistracted = true;  // guard distracted COMMENT THIS OUT FOR IMPLEMENTATION BILL
 }
 
 /// @func guardBranch()

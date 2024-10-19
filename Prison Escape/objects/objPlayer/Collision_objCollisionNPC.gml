@@ -2,4 +2,7 @@
 // You can write your code in this editor
 drawBox();
 objPlayer.isTalkingToPrisoner = true;
-displayPrisonerMenu();
+submitPrisonerAction();
+//objDialogueBox.choice = true;
+//displayPrisonerMenu();
+//submitPrisonerAction();
