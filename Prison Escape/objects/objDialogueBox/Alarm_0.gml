@@ -1,13 +1,15 @@
 /// @description Handles submitting player choices to the appropriate dialogue branch script
-
 if (choice) {
-	alarm [2] = 1;
+	
 	
 	if(objPlayer.isTalkingToPrisoner) {
+		//drawBox();
 		submitPrisonerAction(selected);
 	} else if (objPlayer.isTalkingToGuard) {
+		//drawBox();
 		submitGuardAction(selected);
 	} else if (objPlayer.isInspecting) {
+		//drawBox();
 		submitInspectAction(selected);
 	} else {
 		

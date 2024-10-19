@@ -1,9 +1,10 @@
-/// @description Insert description here
+/// @description drawing text boxes
 // You can write your code in this editor
-
 // Inherit the parent event
 event_inherited();
-drawBox();
-//objDialogueBox.alarm[2] = 1;
-//objPlayer.isTalkingToPrisoner = true;
+ //function that draws the dialogue box
+ drawBox();
+ objPlayer.isTalkingToPrisoner = true;
+//objPlayer.isTalkingToPrisoner = true; //tests the prisoner dialogue branch
+
 
