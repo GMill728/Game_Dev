@@ -166,6 +166,7 @@ function unlockSecretDialogue()
 /// @desc Handles conditionals for when inner monologue is displayed
 /// @return {undefined}
 /// @creator Wilfred 
+//  @Modified by Gavin Mills 10/19
 function handleInnerMonologue()
 {
 	var monologueText = ""; 
@@ -179,7 +180,7 @@ function handleInnerMonologue()
 	}
 	else
 	{
-		monologueText = "[i]No point in pushing my luck any further.[/i]"; 
+		monologueText = "[i]Looks like the guard is distracted, No point in pushing my luck any further.[/i]"; 
 	}
 	objDialogueBox.setDialogue(monologueText); 
 	objPlayer.isTalkingToGuard = false; 

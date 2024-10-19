@@ -20,14 +20,18 @@ if (keyboard_check_pressed(vk_space) ) {
 	} 
 	else if (choice == false) 
 	{
-		if (objPlayer.hasWon) {
+		if (objPlayer.hasWon) 
+		{
 			room_goto(Credits);
-		} else {
+		} 
+		else 
+		{
 			alarm[1] = 1; //Display Actions Menu
 		}//end if
+		
 	}
 
-	
+
 //If mouse button is within the Dialogue Box and a selection is clicked, then call Alarm for handling Player input
 } else if (mouse_check_button_pressed(mb_left) && point_in_rectangle(mouseX, mouseY, left, top, right, bottom) ) {
 	
