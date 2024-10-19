@@ -2,7 +2,7 @@
 /// @author Gavin Mills
 //  Griffen Nya created the strucure of the code which is heavily used here, all work labeled as written as Gavin Mill still implies using structure from Griffen Nye
 //  Date Created by Griffen: 3/21/24
-//  Date Edited by Gavin: 10/3/24
+//  Date Edited by Gavin: 10/19/24
 //  Date Edited by William: 10/6/24 - I'm sorry the code looks awful now but it works.
 //  Leaving as many comments as possible from the original and editing description for ease of use
 //this defines all global variables (written by Gavin Mills)

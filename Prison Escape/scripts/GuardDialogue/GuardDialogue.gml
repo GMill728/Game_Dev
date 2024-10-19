@@ -2,6 +2,7 @@
 /// @author Griffin Nye
 //  Date Created: 3/21/24
 //  Last Date Modified: 10/6/24 by William. Mostly done by Wilfred.
+//  Edited by gavin 10/19
 
 global.guardDialogueOptions = ["Knock on door"]; //Base Dialogue Options
 global.guardInteractionAttempts = 0;
@@ -15,12 +16,7 @@ global.disableGuard = false;
 /// @return {undefined}
 /// @Modified by Wilfred on 10/03/24
 /// @Modified by William
-/*
-
-if(objPlayer.isTalkingToGuard = true){
-			displayGuardMenu();	
-}
-*/
+//  Edited by gavin 10/19
 
 
 
@@ -45,6 +41,7 @@ function displayGuardMenu(){
 /// @param {real} choice Index of the option selected by player in objDialogueBox
 /// @return {undefined}
 /// @modified by Wilfred 10/03/24
+/// @modified by Gavin 10/19
 /// @modified by William
 function submitGuardAction(choice) 
 {
