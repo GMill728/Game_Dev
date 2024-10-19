@@ -68,7 +68,7 @@ function submitPrisonerAction(choice) {//This is the main tree for the prisoner 
 			break;
 		case 3:
 			objPlayer.isTalkingToPrisoner = false;
-			displayActionsMenu();
+			objDialogueBox.alarm[1]=1;
 			break;
 		}//end switch
 	
@@ -88,7 +88,7 @@ function submitPrisonerAction(choice) {//This is the main tree for the prisoner 
 			break;
 		case 3:
 			objPlayer.isTalkingToPrisoner = false;
-			displayActionsMenu();
+			objDialogueBox.alarm[1]=1;
 			break;
 		}//end switch
 		
@@ -108,7 +108,7 @@ function submitPrisonerAction(choice) {//This is the main tree for the prisoner 
 			break;
 		case 3:
 			objPlayer.isTalkingToPrisoner = false;
-			displayActionsMenu();
+			objDialogueBox.alarm[1]=1;
 			break;
 		}//end switch
 	}
@@ -129,7 +129,7 @@ function submitPrisonerAction(choice) {//This is the main tree for the prisoner 
 			break;
 		case 3:
 			objPlayer.isTalkingToPrisoner = false;
-			displayActionsMenu();
+			objDialogueBox.alarm[1]=1;
 			break;
 		}//end switch
 		
@@ -259,48 +259,3 @@ function guardBranch() { //this is the seventh dialogue branch for the prisoner 
 	objDialogueBox.setDialogue(prisonerText);
 	objPlayer.isTalkingToPrisoner = false;
 }
-
-
-
-
-//function getGingerAle() {
-//	global.prisonerDialogueBranch = 0; //Reset branch to default branch
-//	objDialogueBox.setDialogue("Prisoner: \"There ya go, partner. I'll put it on your tab.\"");	
-//}//end getGingerAle
-
-///// @func getRootBeer()
-///// @desc Handles Prisoner response to player ordering a root beer. Presents different responses based on whether or not the player is currently searching for cash to bribe the Guard.
-/////       Ends interaction with Prisoner if not searching for cash, otherwise, switches player to Cash Register branch.
-///// @return {undefined}
-//function getRootBeer() {
-	
-//	var actions;
-//	var prisonerText;
-	
-//	//Response if player is searching for cash
-//	if (objPlayer.isSearchingForCash) {
-//		prisonerText = "Prisoner: \"Sure do!\nHmmm.... appears this barrel is all out.\nI got more in the back.\nI'll be right back.\"\n\nThe cash register seems to be unlocked...";
-//		actions = ["Open the cash register"]; 
-//		global.prisonerDialogueBranch = 2; //Change branch to cash register branch
-//	} else {  //Default Response 
-//		prisonerText = "Prisoner: \"Sure do!\n Here ya go, partner! I'll put it on your tab.\"";
-//		actions = [];
-//		global.prisonerDialogueBranch = 0; //Reset branch to default branch
-//	}//end if
-	
-//	objDialogueBox.setDialogue(prisonerText, actions);
-	
-//}//end getRootBeer
-
-///// @func raidCashRegister()
-///// @desc Handles Game response to player raiding the cash register. *TO BE REMOVED ONCE MOVEMENT & COLLISION UPDATED*
-///// @return {undefined}
-//function raidCashRegister() {
-//	objDialogueBox.setDialogue("You open the cash register to find the cash register loaded with bills.\nThey must have been busy earlier.\n\n***You have acquired a wad of cash***");
-//	objPlayer.hasCash = true;				 //Give the player the cash object
-//	array_set(global.actionOptions, 2, "");  //Remove talking to the prisoner as an action option, as he is in the back
-//	global.prisonerDisabled = true;         //Indicate Prisoner option is now disabled in Actions Menu 
-//	//Unlock bribing the Guard
-//	array_set(global.guardDialogueOptions, 1, "***Slip the guard a few bills***\n\"You think you could tell me where that key is now?\"");
-//	//global.guardSecondDialogueBranch++;  //Increase second dialogue branch
-//}//end raidCashRegister
