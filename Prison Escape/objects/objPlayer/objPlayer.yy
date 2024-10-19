@@ -10,6 +10,7 @@
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"objChisel","path":"objects/objChisel/objChisel.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"objCrackedWall","path":"objects/objCrackedWall/objCrackedWall.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"objBigCrack","path":"objects/objBigCrack/objBigCrack.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"objCollisionNPC","path":"objects/objCollisionNPC/objCollisionNPC.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"objPlayer",

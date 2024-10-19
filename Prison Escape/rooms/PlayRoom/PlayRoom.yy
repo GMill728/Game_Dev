@@ -14,7 +14,6 @@
     {"name":"inst_56C0032D","path":"rooms/PlayRoom/PlayRoom.yy",},
     {"name":"inst_45F76CC8","path":"rooms/PlayRoom/PlayRoom.yy",},
     {"name":"inst_19B8D9C3","path":"rooms/PlayRoom/PlayRoom.yy",},
-    {"name":"inst_62990CCC","path":"rooms/PlayRoom/PlayRoom.yy",},
     {"name":"inst_9EA09D6","path":"rooms/PlayRoom/PlayRoom.yy",},
     {"name":"inst_4C662320","path":"rooms/PlayRoom/PlayRoom.yy",},
     {"name":"inst_160347BD","path":"rooms/PlayRoom/PlayRoom.yy",},
@@ -34,7 +33,6 @@
       ],"layers":[],"name":"Player","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"MysteriosPrisoner","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_19B8D9C3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_19B8D9C3","objectId":{"name":"objMysteriousPrisoner","path":"objects/objMysteriousPrisoner/objMysteriousPrisoner.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":768.0,"y":768.0,},
-        {"$GMRInstance":"v1","%Name":"inst_62990CCC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_62990CCC","objectId":{"name":"testButton","path":"objects/testButton/testButton.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":736.0,"y":768.0,},
         {"$GMRInstance":"v1","%Name":"inst_644A8B9D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_644A8B9D","objectId":{"name":"objCollisionNPC","path":"objects/objCollisionNPC/objCollisionNPC.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":2.0,"x":800.0,"y":800.0,},
       ],"layers":[],"name":"MysteriosPrisoner","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"AbovePlayer","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"AbovePlayer","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
