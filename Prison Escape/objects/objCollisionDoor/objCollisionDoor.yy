@@ -29,7 +29,7 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":true,
+  "solid":false,
   "spriteId":{
     "name":"sprCollisionDoor",
     "path":"sprites/sprCollisionDoor/sprCollisionDoor.yy",

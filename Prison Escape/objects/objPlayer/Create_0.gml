@@ -16,4 +16,4 @@ hasWon = false;
 
 hsp = 0;
 vsp = 0; 
-moveSpeed = 4; 
+moveSpeed = 2; 
