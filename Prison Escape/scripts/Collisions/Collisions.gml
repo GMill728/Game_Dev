@@ -1,25 +1,5 @@
 //@Modified by Wilfred
 
-/// @func isCollidingHorizontal()
-/// @desc Returns whether or not the Player object is colliding with the left or right of a custom collision box
-///       enforced on the objCollisionMask in order to create a 2.5D effect (2D with player depth)
-function isCollidingHorizontal() {
-    // Player bounding box height calculation
-    var playerHeight = bbox_bottom - bbox_top;
-    var playerKnee = bbox_bottom - ceil(playerHeight/4); // Player Collision Point when approaching from bottom (moving up)
-
-    // Check for left movement collision
-    if (hsp < 0 && position_meeting(bbox_left, y, objParentCollision) && position_meeting(bbox_left, playerKnee, objParentCollision)) {
-        return true; // Collision when moving left
-    } 
-    // Check for right movement collision
-    else if (hsp > 0 && position_meeting(bbox_right - 1, y, objParentCollision) && position_meeting(bbox_right - 1, playerKnee, objParentCollision)) {
-        return true; // Collision when moving right
-    }
-
-    return false;  // No collision
-}
-
 /// @func isCollidingVertical()
 /// @desc Returns whether or not the Player object is colliding with the top or bottom of a custom collision box 
 ///       enforced on the objCollisionMask in order to create a 2.5D effect (2D with player depth)
@@ -40,6 +20,26 @@ function isCollidingVertical() {
     }
 
     return false; // No collision
+}
+
+/// @func isCollidingHorizontal()
+/// @desc Returns whether or not the Player object is colliding with the left or right of a custom collision box
+///       enforced on the objCollisionMask in order to create a 2.5D effect (2D with player depth)
+function isCollidingHorizontal() {
+    // Player bounding box height calculation
+    var playerHeight = bbox_bottom - bbox_top;
+    var playerKnee = bbox_bottom - ceil(playerHeight/4); // Player Collision Point when approaching from bottom (moving up)
+
+    // Check for left movement collision
+    if (hsp < 0 && position_meeting(bbox_left, y, objParentCollision) && position_meeting(bbox_left, playerKnee, objParentCollision)) {
+        return true; // Collision when moving left
+    } 
+    // Check for right movement collision
+    else if (hsp > 0 && position_meeting(bbox_right - 1, y, objParentCollision) && position_meeting(bbox_right - 1, playerKnee, objParentCollision)) {
+        return true; // Collision when moving right
+    }
+
+    return false;  // No collision
 }
 
 /// @func isAboveClosestInstance(collisionMasks)

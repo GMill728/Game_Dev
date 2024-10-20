@@ -101,9 +101,9 @@ function throwStone()
 {
 	var guardText = "You throw the stone, and it flies through the window and hits a far wall, noises singing from it. The guard gets up and grumbles, going over to check what it is.";
 	objPlayer.hasGuardDistracted = true;
-	objPlayer.isTalkingToGuard = false;
 	global.disableGuard = true;
 	objDialogueBox.setDialogue(guardText);
+	objPlayer.isTalkingToGuard = false;
 }
 
 
@@ -115,7 +115,7 @@ function handleFirstAttempt()
 {
 	var guardText = "Guard: \"What do you want? I'm not here to entertain you.\""; 
 	objDialogueBox.setDialogue(guardText); 
-	objPlayer.isTalkingToGuard = false; // close window after first attempt
+	objPlayer.isTalkingToGuard = false;
 }
 
 /// @func handleSecondAttempt()
@@ -126,7 +126,7 @@ function handleSecondAttempt()
 {
 	var guardText = "Guard: \"Talk? You think I have time for your drivel?\""; 
 	objDialogueBox.setDialogue(guardText); 
-	objPlayer.isTalkingToGuard = false; 
+	objPlayer.isTalkingToGuard = false;
 }
 
 /// @func handleThirdAttempt()
@@ -137,7 +137,7 @@ function handleThirdAttempt()
 {
 	var guardText = "Guard: \"Is this a game to you? Because I don't find it amusing.\""; 
 	objDialogueBox.setDialogue(guardText); 
-	objPlayer.isTalkingToGuard = false; 
+	objPlayer.isTalkingToGuard = false;
 }
 
 /// @func handleSilentAttempt()
@@ -148,7 +148,7 @@ function handleSilentAttempt()
 {
 	var guardText = "Guard: \".............\""; 
 	objDialogueBox.setDialogue(guardText); 
-	objPlayer.isTalkingToGuard = false; 
+	objPlayer.isTalkingToGuard = false;
 }
 
 /// @func unlockSecretDialogue()
@@ -183,7 +183,6 @@ function handleInnerMonologue()
 		monologueText = "[i]Looks like the guard is distracted, No point in pushing my luck any further.[/i]"; 
 	}
 	objDialogueBox.setDialogue(monologueText); 
-	objPlayer.isTalkingToGuard = false; 
 }
 
 /// @func handleSecretDialogue()
@@ -228,8 +227,8 @@ function handleSecretDialogue()
 		guardText += " You know, I suppose we all have our own burden to bear. " +
 		                "Even those stuck behind bars like you.\"";
 		objDialogueBox.setDialogue(guardText);
-		objPlayer.isTalkingToGuard = false; //end converstation
-		global.guardSecretDialogueExhausted = true; 
+		global.guardSecretDialogueExhausted = true;
+	    objPlayer.isTalkingToGuard = false;
 		return;
 	}//end switch
 	objDialogueBox.setDialogue(guardText, global.guardDialogueOptions);
