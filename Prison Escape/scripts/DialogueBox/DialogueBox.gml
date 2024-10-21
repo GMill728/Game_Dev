@@ -10,6 +10,13 @@
 /// @param {real} width The width of the area within the Dialogue Box for text to be displayed in
 /// @return {undefined}
 /// @modified by Wilfred
+
+function drawBox(){
+	//setDialogue();
+	instance_create_layer(x,y,"Player",objDialogueBox);
+	objDialogueBox.alarm[0]=1;
+}
+
 function typeText(x, y, text, progress, width) {
 	var charX = 0;  //x position of current char
 	var charY = 0;  //y position of current char
@@ -92,3 +99,4 @@ function getSelected(numOptions, spacing, botTextArea, mouseY) {
 	}//end if
 	
 }//end getSelected;
+

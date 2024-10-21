@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"seqFadeIn_Events1",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Intro",
+    "path":"folders/Scripts/Intro.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
