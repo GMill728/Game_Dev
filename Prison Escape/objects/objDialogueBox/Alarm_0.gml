@@ -2,26 +2,26 @@
 if (choice) {
 	
 	
-	if(Player.isTalkingToPrisoner) {
+	if(objPlayer.thisPlayer.isTalkingToPrisoner) {
 		//drawBox();
-		submitPrisonerAction(selected);
-	} else if (Player.isTalkingToGuard) {
+		global.prisoner.submitPrisonerAction(selected);
+	} else if (objPlayer.thisPlayer.isTalkingToGuard) {
 		//drawBox();
-		submitGuardAction(selected);
-	} else if (Player.isInspecting) {
-		//drawBox();
-		submitInspectAction(selected);
-	} else {
+		global.guard.submitGuardAction(selected);
+	}
+	//} else if (objPlayer.thisPlayer.isInspecting) {
+	//	//drawBox();
+	//	submitInspectAction(selected);
+	//} else {
 		
-		//Prevent Innkeeper option from being selected while disabled
-		//NOTE: Will be deprecated after movmement & collision
-	if (prisonerDisabled && selected == 3) {
-			selected = -1;
-		}//end if
+	//	//Prevent Innkeeper option from being selected while disabled
+	//	//NOTE: Will be deprecated after movmement & collision
+	//if (objPlayer.thisPlayer.prisonerDisabled && selected == 3) {
+	//		selected = -1;
+	//	}//end if
 	
-		submitPlayerAction(selected);
-		
-	}//end if
+		//submitPlayerAction(selected);
+		//end if
 	
 } 
 

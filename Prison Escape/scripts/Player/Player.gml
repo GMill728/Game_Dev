@@ -32,40 +32,40 @@ function Player(objInstance, movSpd, mnDepth, mxDepth) constructor{
 	function control() {
 		//Set appropriate sprite and movement based on user input
 		if (keyboard_check(ord("A")) ) {
-		 sprite_index = charWalkLeft;
-		 hsp = -moveSpeed;
+			instance.sprite_index = charWalkLeft;
+			hsp = -moveSpeed;
 		} 
-		else if (keyboard_check(ord("D")) ) {
-		 sprite_index = charWalkRight;
-		  hsp = moveSpeed; 
+		if (keyboard_check(ord("D")) ) {
+			instance.sprite_index = charWalkRight;
+			hsp = moveSpeed; 
 		} 
-		else if (keyboard_check(ord("S")) ) {
-		  sprite_index = charWalkDown;
-		  vsp = moveSpeed; 
+		if (keyboard_check(ord("S")) ) {
+			instance.sprite_index = charWalkDown;
+			vsp = moveSpeed; 
 		} 
-		else if (keyboard_check(ord("W")) ) {
-		  sprite_index = charWalkUp;
-		  vsp = -moveSpeed; 
+		if (keyboard_check(ord("W")) ) {
+			instance.sprite_index = charWalkUp;
+			vsp = -moveSpeed; 
 		}
 
 		// Handle idle animations when movement keys are released
 		if (keyboard_check_released(ord("A")) ) {
-		  sprite_index = charIdleLeft;
+			instance.sprite_index = charIdleLeft;
 			vsp = 0;
 			hsp = 0;
 		} 
 		else if (keyboard_check_released(ord("D")) ) {
-		  sprite_index = charIdleRight;
+			instance.sprite_index = charIdleRight;
 			vsp = 0;
 			hsp = 0;
 		} 
 		else if (keyboard_check_released(ord("S")) ) {
-		   sprite_index = charIdleDown;
+			instance.sprite_index = charIdleDown;
 			vsp = 0;
 			hsp = 0;
 		} 
 		else if (keyboard_check_released(ord("W")) ) {
-		    sprite_index = charIdleUp;
+			instance.sprite_index = charIdleUp;
 			vsp = 0;
 			hsp = 0;
 		}
@@ -75,41 +75,39 @@ function Player(objInstance, movSpd, mnDepth, mxDepth) constructor{
 	//function for stopping movement during dialogue
 	function move(){
 		if(!isTalkingToGuard && !isTalkingToPrisoner) {
-			
 			with (instance) {
-		x = clamp(x + other.hsp, x - bbox_left, room_width - (bbox_right - x));
-		y = clamp(y + other.vsp, y - bbox_top, room_height - (bbox_bottom - y));
-		
+				x = clamp(x + other.hsp, x - bbox_left, room_width - (bbox_right - x));
+				y = clamp(y + other.vsp, y - bbox_top, room_height - (bbox_bottom - y));
 			}//end with
 		}//end if
 	}//end move
 	
 	function enforceCollisions(objectType) {
 		
-	if (isCollidingHorizontal()) {
-    hsp = 0;  // Stop horizontal movement if colliding
-	} else if (isCollidingVertical()) {
-    vsp = 0;  // Stop vertical movement if colliding
-	}
+		if (isCollidingHorizontal(objectType)) {
+			hsp = 0;  // Stop horizontal movement if colliding
+		} else if (isCollidingVertical(objectType)) {
+			vsp = 0;  // Stop vertical movement if colliding
+		}
 	
 	}//end enforceCollisions
 	
 	function isCollidingHorizontal(objectType) {
     // Player bounding box height calculation
-	with(instance){
+		with(instance){
 	
-		var playerHeight = bbox_bottom - bbox_top;
-		var playerKnee = bbox_bottom - ceil(playerHeight/4); // Player Collision Point when approaching from bottom (moving up)
+			var playerHeight = bbox_bottom - bbox_top;
+			var playerKnee = bbox_bottom - ceil(playerHeight/4); // Player Collision Point when approaching from bottom (moving up)
 
-		// Check for left movement collision
-		if (other.hsp < 0 && position_meeting(bbox_left, y, objectType) && position_meeting(bbox_left, playerKnee, objectType)) {
-			return true; // Collision when moving left
+			// Check for left movement collision
+			if (other.hsp < 0 && position_meeting(bbox_left, y, objectType) && position_meeting(bbox_left, playerKnee, objectType)) {
+				return true; // Collision when moving left
 			} 
-		// Check for right movement collision
-		else if (other.hsp > 0 && position_meeting(bbox_right - 1, y, objectType) && position_meeting(bbox_right - 1, playerKnee, objectType)) {
-			return true; // Collision when moving right
-		}
-	}//end with
+			// Check for right movement collision
+			else if (other.hsp > 0 && position_meeting(bbox_right - 1, y, objectType) && position_meeting(bbox_right - 1, playerKnee, objectType)) {
+				return true; // Collision when moving right
+			}
+		}//end with
 	return false;  // No collision
 	
 	}// end horizontal collision
@@ -119,38 +117,36 @@ function Player(objInstance, movSpd, mnDepth, mxDepth) constructor{
 	function isCollidingVertical(objectType) {
     // Player bounding box height calculation
     
-	with(instance) {
+		with(instance) {
 		
-		var playerHeight = bbox_bottom - bbox_top;
-		var playerKnee = bbox_bottom - ceil(playerHeight/4); // Player Collision Point when approaching from bottom (moving up)
+			var playerHeight = bbox_bottom - bbox_top;
+			var playerKnee = bbox_bottom - ceil(playerHeight/4); // Player Collision Point when approaching from bottom (moving up)
 
-		// Check for upward movement collision
-		if (other.vsp < 0 && collision_line(bbox_left, playerKnee + other.vsp, bbox_right, playerKnee + other.vsp, objectType, false, true) != noone 
-                && collision_line(bbox_left, y + other.vsp, bbox_right, y + vsp, objectType, false, true) != noone ) {
-			return true; // Collision when moving up
-		} 
-    // Check for downward movement collision
-		else if (other.vsp > 0 && collision_line(bbox_left, y + other.vsp, bbox_right, y + other.vsp, objectType, false, true) != noone 
-                     && collision_line(bbox_left, playerKnee + other.vsp, bbox_right, playerKnee + other.vsp, objectType, false, true) != noone ) {
-			return true; // Collision when moving down
-		}//end if
-	}//end with
+			// Check for upward movement collision
+			if (other.vsp < 0 && collision_line(bbox_left, playerKnee + other.vsp, bbox_right, playerKnee + other.vsp, objectType, false, true) != noone 
+	                && collision_line(bbox_left, y + other.vsp, bbox_right, y + other.vsp, objectType, false, true) != noone ) {
+				return true; // Collision when moving up
+			} 
+			// Check for downward movement collision
+			else if (other.vsp > 0 && collision_line(bbox_left, y + other.vsp, bbox_right, y + other.vsp, objectType, false, true) != noone 
+	                     && collision_line(bbox_left, playerKnee + other.vsp, bbox_right, playerKnee + other.vsp, objectType, false, true) != noone ) {
+				return true; // Collision when moving down
+			}//end if
+		}//end with
    return false; // No collision
 }//end vertical collision
 	
 	
-	function determineDepth(objectType) {
-		
-		instance.depth = isAboveClosestInstance(objectType) ? maxDepth : minDepth;
-	}//end determineDepth
+function determineDepth(objectType) {	
+	instance.depth = isAboveClosestInstance(objectType) ? maxDepth : minDepth;
+}//end determineDepth
 	
-	
-	function isAboveClosestInstance(objectType) {
-    
-	if (instance_number(objectType) == 0) {
+
+function isAboveClosestInstance(objectType) {
+    if (instance_number(objectType) == 0) {
         // If there are no collision objects, return a default depth
         return false;
-    }
+	}
 
     // Find the closest instance of the collision mask
     var closestInstance = instance_find(objectType, 0);

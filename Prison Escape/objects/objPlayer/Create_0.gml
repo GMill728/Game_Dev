@@ -18,6 +18,6 @@
 //vsp = 0; 
 //moveSpeed = 2; 
 hasWon = false;
-thisPlayer = new Player(self, 2, 100, 750);
+thisPlayer = new Player(self, 2, 0, 450);
 
 //(obj instance, movement speed, min depth, max depth)

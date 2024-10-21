@@ -5,5 +5,5 @@
 if ( !variable_instance_exists(objPlayer, "thisPlayer") ) {
 	alarm[0] = 1;
 } else {
-	global.prisoner = new prisonerDialogue(objPlayer.thisPlayer, objDialogueBox);
+	global.prisoner = new PrisonerDialogue(objPlayer.thisPlayer, objDialogueBox);
 }//end if
