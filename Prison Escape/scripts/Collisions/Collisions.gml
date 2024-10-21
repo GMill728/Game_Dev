@@ -30,14 +30,6 @@
 //    var playerHeight = bbox_bottom - bbox_top;
 //    var playerKnee = bbox_bottom - ceil(playerHeight/4); // Player Collision Point when approaching from bottom (moving up)
 
-//    // Check for left movement collision
-//    if (hsp < 0 && position_meeting(bbox_left, y, objParentCollision) && position_meeting(bbox_left, playerKnee, objParentCollision)) {
-//        return true; // Collision when moving left
-//    } 
-//    // Check for right movement collision
-//    else if (hsp > 0 && position_meeting(bbox_right - 1, y, objParentCollision) && position_meeting(bbox_right - 1, playerKnee, objParentCollision)) {
-//        return true; // Collision when moving right
-//    }
 
 //    return false;  // No collision
 //}
