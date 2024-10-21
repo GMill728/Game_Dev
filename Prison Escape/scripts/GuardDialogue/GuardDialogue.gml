@@ -101,6 +101,7 @@ function throwStone()
 {
 	var guardText = "You throw the stone, and it flies through the window and hits a far wall, noises singing from it. The guard gets up and grumbles, going over to check what it is.";
 	objPlayer.hasGuardDistracted = true;
+	global.prisoner.unlocksPrisoner(3);
 	global.disableGuard = true;
 	objDialogueBox.setDialogue(guardText);
 	objPlayer.isTalkingToGuard = false;
