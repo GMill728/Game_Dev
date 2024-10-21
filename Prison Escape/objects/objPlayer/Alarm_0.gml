@@ -16,11 +16,14 @@ if( instance_exists(objDialogueBox) ) {
 }//end if
 
 //Create new objDialogueBox at (0,-64) on DialogueBox layer
+
+
+//if(isTalkingToGuard) {
+//global.prisonerDialogue;
+//} else 
+if (isTalkingToPrisoner) {
+global.prisonerDialogue.displayMenu();
+}//end if
 drawBox();
 
 //Display appropriate dialogue in objDialogueBox
-if(isTalkingToGuard) {
-	displayGuardMenu();
-} else if (isTalkingToPrisoner) {
-	displayPrisonerMenu();
-}//end if

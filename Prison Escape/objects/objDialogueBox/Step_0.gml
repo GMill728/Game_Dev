@@ -24,13 +24,11 @@ if (keyboard_check_pressed(vk_space) ) {
 		{
 			room_goto(Credits);
 		} 
-		else 
-		{
-			alarm[1] = 1; //Display Actions Menu
-		}//end if
+		else { // Check if choices exist
+                alarm[1] = 1;  // Close text box
+		}
 		
 	}
-
 
 //If mouse button is within the Dialogue Box and a selection is clicked, then call Alarm for handling Player input
 } else if (mouse_check_button_pressed(mb_left) && point_in_rectangle(mouseX, mouseY, left, top, right, bottom) ) {

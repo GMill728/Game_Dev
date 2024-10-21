@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"PrisonerDialogue",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"depreicated",
+    "path":"folders/Scripts/depreicated.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

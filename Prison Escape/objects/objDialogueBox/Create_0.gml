@@ -55,8 +55,9 @@ function setDialogue(dialogueText, choices = []) {
 	//Setup Dialogue Box based on whether or not user is presented with a choice
 	if (array_length(choices) == 0) { //No choices case
 		text += "\n\nPress spacebar to continue..."; //Append user instructions
-		choice = false;                              //Indicate no choice
+		choice = false;//Indicate no choice
 		options = [];	                             //Clear previous user options
+		
 		
 	} else { //Choices case
 		choice = true;                                              //Indicate choice present
