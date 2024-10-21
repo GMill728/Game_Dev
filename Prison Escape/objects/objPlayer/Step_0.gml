@@ -59,6 +59,20 @@
 //	y = clamp(y + vsp, y - bbox_top, room_height - (bbox_bottom - y));
 //}
 
+//controls scheme function in player struct
+thisPlayer.control();
+
+//collision checks in player structs
+thisPlayer.enforceCollisions(objParentCollision);
+
+thisPlayer.determineDepth(objParentCollision);
+
+//enforces collision movement rules
+thisPlayer.move();
+
+
+
+//// Adjust the player's depth dynamically based on proximity to collision objects
 
 
 // Debug messages for tracking player depth and y-coordinate
