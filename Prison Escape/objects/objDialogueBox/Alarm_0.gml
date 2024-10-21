@@ -2,20 +2,20 @@
 if (choice) {
 	
 	
-	if(objPlayer.isTalkingToPrisoner) {
+	if(Player.isTalkingToPrisoner) {
 		//drawBox();
 		submitPrisonerAction(selected);
-	} else if (objPlayer.isTalkingToGuard) {
+	} else if (Player.isTalkingToGuard) {
 		//drawBox();
 		submitGuardAction(selected);
-	} else if (objPlayer.isInspecting) {
+	} else if (Player.isInspecting) {
 		//drawBox();
 		submitInspectAction(selected);
 	} else {
 		
 		//Prevent Innkeeper option from being selected while disabled
 		//NOTE: Will be deprecated after movmement & collision
-	if (global.prisonerDisabled && selected == 3) {
+	if (prisonerDisabled && selected == 3) {
 			selected = -1;
 		}//end if
 	

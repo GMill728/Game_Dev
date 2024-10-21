@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"Collisions",
+  "%Name":"Dialogue",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Collisions",
+  "name":"Dialogue",
   "parent":{
-    "name":"depreicated",
-    "path":"folders/Scripts/depreicated.yy",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
