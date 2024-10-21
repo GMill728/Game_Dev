@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"charIdleRight",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":63,
-  "bbox_left":16,
-  "bbox_right":45,
+  "bbox_left":12,
+  "bbox_right":49,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,

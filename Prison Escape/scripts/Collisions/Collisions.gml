@@ -35,7 +35,7 @@ function isCollidingHorizontal() {
         return true; // Collision when moving left
     } 
     // Check for right movement collision
-    else if (hsp > 0 && position_meeting(bbox_right - 1, y, objParentCollision) && position_meeting(bbox_right - 1, playerKnee, objParentCollision)) {
+    else if (hsp > 0 && position_meeting(bbox_right, y, objParentCollision) && position_meeting(bbox_right - 1, playerKnee, objParentCollision)) {
         return true; // Collision when moving right
     }
 

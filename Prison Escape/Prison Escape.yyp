@@ -192,9 +192,9 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"PlayRoom","path":"rooms/PlayRoom/PlayRoom.yy",},},
     {"roomId":{"name":"Options","path":"rooms/Options/Options.yy",},},
     {"roomId":{"name":"StudioRoom","path":"rooms/StudioRoom/StudioRoom.yy",},},
-    {"roomId":{"name":"PlayRoom","path":"rooms/PlayRoom/PlayRoom.yy",},},
     {"roomId":{"name":"OldOptions","path":"rooms/OldOptions/OldOptions.yy",},},
     {"roomId":{"name":"Intro","path":"rooms/Intro/Intro.yy",},},
     {"roomId":{"name":"MainMenu","path":"rooms/MainMenu/MainMenu.yy",},},

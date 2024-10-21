@@ -60,7 +60,7 @@ if(!isTalkingToGuard && !isTalkingToPrisoner) {
 }
 
 // Adjust the player's depth dynamically based on proximity to collision objects
-depth = isAboveClosestInstance(objParentCollision) ? 550 : 0;
+depth = isAboveClosestInstance(objParentCollision) ? 450 : 0;
 
 // Debug messages for tracking player depth and y-coordinate
 show_debug_message("Player depth: " + string(depth));
