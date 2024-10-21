@@ -9,4 +9,4 @@ draw_set_halign(fa_center)
 
 var textH = string_height(text); 
 
-draw_text_color(room_width/2, textH * 1.7, text, c_blue, c_blue, c_green, c_green, 1);
+draw_text_color(room_width/2, textH * 1.7, text, c_white, c_white, c_white, c_white, 1);
