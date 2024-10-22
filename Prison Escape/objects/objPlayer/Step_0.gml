@@ -6,22 +6,32 @@
 vsp = 0; 
 hsp = 0; 
 
+var isMoving = false; 
+
+if (!variable_instance_exists(id, "soundDelay")) {
+    soundDelay = 0; // Initialize the sound delay timer variable
+}
+
 // Handle movement inputs
 if (keyboard_check(ord("A")) ) {
     sprite_index = charWalkLeft;
     hsp = -moveSpeed;
+	isMoving = true; 
 } 
 else if (keyboard_check(ord("D")) ) {
     sprite_index = charWalkRight;
     hsp = moveSpeed; 
+	isMoving = true; 
 } 
 else if (keyboard_check(ord("S")) ) {
     sprite_index = charWalkDown;
     vsp = moveSpeed; 
+	isMoving = true; 
 } 
 else if (keyboard_check(ord("W")) ) {
     sprite_index = charWalkUp;
     vsp = -moveSpeed; 
+	isMoving = true; 
 }
 
 // Handle idle animations when movement keys are released
@@ -46,6 +56,24 @@ else if (keyboard_check_released(ord("W")) ) {
 	hsp = 0;
 }
 
+
+// Handle walking sound delay with custom timer
+if (isMoving) {
+    if (soundDelay == 0 && !audio_is_playing(sndWalk)) {
+        soundDelay = 15; // Set a delay of 30 frames (0.5 seconds if 60 FPS)
+    } else if (soundDelay > 0) {
+        soundDelay--; // Countdown the delay
+    }
+    
+    if (soundDelay == 0 && !audio_is_playing(sndWalk)) {
+        audio_play_sound(sndWalk, 1, true);  // Play walking sound after delay
+    }
+} else {
+    // Stop the sound and reset the timer if player stops moving
+    audio_stop_sound(sndWalk);
+    soundDelay = 0; // Reset the sound delay timer
+}
+
 // Check for horizontal and vertical collisions separately
 if (isCollidingHorizontal()) {
     hsp = 0;  // Stop horizontal movement if colliding
@@ -61,8 +89,4 @@ if(!isTalkingToGuard && !isTalkingToPrisoner) {
 
 // Adjust the player's depth dynamically based on proximity to collision objects
 depth = isAboveClosestInstance(objParentCollision) ? 550 : 0;
-
-// Debug messages for tracking player depth and y-coordinate
-show_debug_message("Player depth: " + string(depth));
-show_debug_message("Player y-coordinate: " + string(y));
 
