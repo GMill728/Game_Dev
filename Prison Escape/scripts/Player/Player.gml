@@ -23,29 +23,38 @@ function Player(objInstance, movSpd, mnDepth, mxDepth) constructor{
 	//hasWon = false;
 	//movement variables
 	hsp = 0;
-	vsp = 0; 
+	vsp = 0;  
 	moveSpeed = movSpd; 
 	//depth variables
 	minDepth = mnDepth;
 	maxDepth = mxDepth;
+	 
+	isMoving = false; 
+	// Ensure soundDelay is initialized if not already present
 	
 	function control() {
+		
+		isMoving = false; 
 		//Set appropriate sprite and movement based on user input
 		if (keyboard_check(ord("A")) ) {
 			instance.sprite_index = charWalkLeft;
 			hsp = -moveSpeed;
+			isMoving = true; 
 		} 
 		if (keyboard_check(ord("D")) ) {
 			instance.sprite_index = charWalkRight;
 			hsp = moveSpeed; 
+			isMoving = true; 
 		} 
 		if (keyboard_check(ord("S")) ) {
 			instance.sprite_index = charWalkDown;
 			vsp = moveSpeed; 
+			isMoving = true; 
 		} 
 		if (keyboard_check(ord("W")) ) {
 			instance.sprite_index = charWalkUp;
 			vsp = -moveSpeed; 
+			isMoving = true; 
 		}
 
 		// Handle idle animations when movement keys are released
@@ -69,7 +78,20 @@ function Player(objInstance, movSpd, mnDepth, mxDepth) constructor{
 			vsp = 0;
 			hsp = 0;
 		}
+		
+		//play sound effect when isMoving is true. 
+		if (isMoving) {
+			if (!audio_is_playing(sndWalk)) {
+				audio_play_sound(sndWalk, 1, true); // Play walking sound
+			}
+		} 
+		else {
+			audio_stop_sound(sndWalk); // Stop the walking sound when the player stops moving
+		}
+		
 	}//end control inputs
+	
+	
 	
 	
 	//function for stopping movement during dialogue
