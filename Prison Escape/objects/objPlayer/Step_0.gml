@@ -6,7 +6,11 @@
 //vsp = 0; 
 //hsp = 0; 
 
+<<<<<<< HEAD
 //// Handle movement inputs
+=======
+// Handle movement inputs
+>>>>>>> f83abe3f70392dfc721333651436f6ebba23f0f9
 //if (keyboard_check(ord("A")) ) {
 //    sprite_index = charWalkLeft;
 //    hsp = -moveSpeed;
@@ -46,6 +50,24 @@
 //	hsp = 0;
 //}
 
+
+// Handle walking sound delay with custom timer
+if (isMoving) {
+    if (soundDelay == 0 && !audio_is_playing(sndWalk)) {
+        soundDelay = 15; // Set a delay of 30 frames (0.5 seconds if 60 FPS)
+    } else if (soundDelay > 0) {
+        soundDelay--; // Countdown the delay
+    }
+    
+    if (soundDelay == 0 && !audio_is_playing(sndWalk)) {
+        audio_play_sound(sndWalk, 1, true);  // Play walking sound after delay
+    }
+} else {
+    // Stop the sound and reset the timer if player stops moving
+    audio_stop_sound(sndWalk);
+    soundDelay = 0; // Reset the sound delay timer
+}
+
 // Check for horizontal and vertical collisions separately
 //if (isCollidingHorizontal()) {
 //    hsp = 0;  // Stop horizontal movement if colliding
@@ -74,8 +96,4 @@ thisPlayer.move();
 
 //// Adjust the player's depth dynamically based on proximity to collision objects
 
-
-// Debug messages for tracking player depth and y-coordinate
-show_debug_message("Player depth: " + string(depth));
-show_debug_message("Player y-coordinate: " + string(y));
 

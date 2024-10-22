@@ -13,7 +13,11 @@
   "name":"sndCredits",
   "parent":{
     "name":"Music",
+<<<<<<< HEAD
     "path":"folders/Sounds/Music.yy",
+=======
+    "path":"folders/SFXandMusic/Music.yy",
+>>>>>>> f83abe3f70392dfc721333651436f6ebba23f0f9
   },
   "preload":false,
   "resourceType":"GMSound",
@@ -21,5 +25,9 @@
   "sampleRate":44100,
   "soundFile":"sndCredits.mp3",
   "type":0,
+<<<<<<< HEAD
   "volume":0.5,
+=======
+  "volume":0.4,
+>>>>>>> f83abe3f70392dfc721333651436f6ebba23f0f9
 }

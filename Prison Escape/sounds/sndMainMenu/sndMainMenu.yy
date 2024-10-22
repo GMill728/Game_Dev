@@ -13,7 +13,11 @@
   "name":"sndMainMenu",
   "parent":{
     "name":"Music",
+<<<<<<< HEAD
     "path":"folders/Sounds/Music.yy",
+=======
+    "path":"folders/SFXandMusic/Music.yy",
+>>>>>>> f83abe3f70392dfc721333651436f6ebba23f0f9
   },
   "preload":false,
   "resourceType":"GMSound",

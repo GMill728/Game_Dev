@@ -29,6 +29,9 @@
     {"$GMFolder":"","%Name":"depreicated","folderPath":"folders/Scripts/depreicated.yy","name":"depreicated","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Intro","folderPath":"folders/Scripts/Intro.yy","name":"Intro","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sequences","folderPath":"folders/Sequences.yy","name":"Sequences","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"SFXandMusic","folderPath":"folders/SFXandMusic.yy","name":"SFXandMusic","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Music","folderPath":"folders/SFXandMusic/Music.yy","name":"Music","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"SFX","folderPath":"folders/SFXandMusic/SFX.yy","name":"SFX","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Shaders","folderPath":"folders/Shaders.yy","name":"Shaders","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sounds","folderPath":"folders/Sounds.yy","name":"Sounds","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"SFX","folderPath":"folders/Sounds/SFX.yy","name":"SFX","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -140,7 +143,10 @@
     {"id":{"name":"sndCredits","path":"sounds/sndCredits/sndCredits.yy",},},
     {"id":{"name":"sndMainMenu","path":"sounds/sndMainMenu/sndMainMenu.yy",},},
     {"id":{"name":"sndRain","path":"sounds/sndRain/sndRain.yy",},},
+<<<<<<< HEAD
     {"id":{"name":"sndVictory","path":"sounds/sndVictory/sndVictory.yy",},},
+=======
+>>>>>>> f83abe3f70392dfc721333651436f6ebba23f0f9
     {"id":{"name":"sndWalk","path":"sounds/sndWalk/sndWalk.yy",},},
     {"id":{"name":"backButton","path":"sprites/backButton/backButton.yy",},},
     {"id":{"name":"charIdleDown","path":"sprites/charIdleDown/charIdleDown.yy",},},
@@ -168,9 +174,15 @@
     {"id":{"name":"mmBackground_8","path":"sprites/mmBackground_8/mmBackground_8.yy",},},
     {"id":{"name":"mmBackground_9","path":"sprites/mmBackground_9/mmBackground_9.yy",},},
     {"id":{"name":"mmBackground","path":"sprites/mmBackground/mmBackground.yy",},},
+<<<<<<< HEAD
     {"id":{"name":"mmBackgroundCredit2","path":"sprites/mmBackgroundCredit2/mmBackgroundCredit2.yy",},},
     {"id":{"name":"mmBackgroundCredit3","path":"sprites/mmBackgroundCredit3/mmBackgroundCredit3.yy",},},
     {"id":{"name":"mmBackgroundCredits","path":"sprites/mmBackgroundCredits/mmBackgroundCredits.yy",},},
+=======
+    {"id":{"name":"mmBackgroundCredits","path":"sprites/mmBackgroundCredits/mmBackgroundCredits.yy",},},
+    {"id":{"name":"mmBackgroundCredits2","path":"sprites/mmBackgroundCredits2/mmBackgroundCredits2.yy",},},
+    {"id":{"name":"mmBackgroundCredits3","path":"sprites/mmBackgroundCredits3/mmBackgroundCredits3.yy",},},
+>>>>>>> f83abe3f70392dfc721333651436f6ebba23f0f9
     {"id":{"name":"MmWalk","path":"sprites/MmWalk/MmWalk.yy",},},
     {"id":{"name":"optionsButton","path":"sprites/optionsButton/optionsButton.yy",},},
     {"id":{"name":"prisonerNPC","path":"sprites/prisonerNPC/prisonerNPC.yy",},},
@@ -210,11 +222,14 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"StudioRoom","path":"rooms/StudioRoom/StudioRoom.yy",},},
     {"roomId":{"name":"Credits","path":"rooms/Credits/Credits.yy",},},
+<<<<<<< HEAD
+=======
+    {"roomId":{"name":"MainMenu","path":"rooms/MainMenu/MainMenu.yy",},},
+>>>>>>> f83abe3f70392dfc721333651436f6ebba23f0f9
     {"roomId":{"name":"PlayRoom","path":"rooms/PlayRoom/PlayRoom.yy",},},
     {"roomId":{"name":"Options","path":"rooms/Options/Options.yy",},},
     {"roomId":{"name":"OldOptions","path":"rooms/OldOptions/OldOptions.yy",},},
     {"roomId":{"name":"Intro","path":"rooms/Intro/Intro.yy",},},
-    {"roomId":{"name":"MainMenu","path":"rooms/MainMenu/MainMenu.yy",},},
     {"roomId":{"name":"OldMainMenu","path":"rooms/OldMainMenu/OldMainMenu.yy",},},
     {"roomId":{"name":"OldNameSelect","path":"rooms/OldNameSelect/OldNameSelect.yy",},},
     {"roomId":{"name":"NameSelect","path":"rooms/NameSelect/NameSelect.yy",},},

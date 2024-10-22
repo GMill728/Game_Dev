@@ -12,8 +12,13 @@
   "duration":59.742043,
   "name":"sndAmbience",
   "parent":{
+<<<<<<< HEAD
     "name":"Music",
     "path":"folders/Sounds/Music.yy",
+=======
+    "name":"SFX",
+    "path":"folders/SFXandMusic/SFX.yy",
+>>>>>>> f83abe3f70392dfc721333651436f6ebba23f0f9
   },
   "preload":false,
   "resourceType":"GMSound",
