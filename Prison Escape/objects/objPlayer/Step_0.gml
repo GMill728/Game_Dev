@@ -6,7 +6,6 @@
 vsp = 0; 
 hsp = 0; 
 
-
 // Handle movement inputs
 //if (keyboard_check(ord("A")) ) {
 //    sprite_index = charWalkLeft;
