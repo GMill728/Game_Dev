@@ -19,3 +19,5 @@ vsp = 0;
 moveSpeed = 2; 
 
 soundDelay = 0; 
+
+//(obj instance, movement speed, min depth, max depth)

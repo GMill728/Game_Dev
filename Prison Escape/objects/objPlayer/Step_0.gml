@@ -6,33 +6,24 @@
 vsp = 0; 
 hsp = 0; 
 
-var isMoving = false; 
-
-if (!variable_instance_exists(id, "soundDelay")) {
-    soundDelay = 0; // Initialize the sound delay timer variable
-}
 
 // Handle movement inputs
-if (keyboard_check(ord("A")) ) {
-    sprite_index = charWalkLeft;
-    hsp = -moveSpeed;
-	isMoving = true; 
-} 
-else if (keyboard_check(ord("D")) ) {
-    sprite_index = charWalkRight;
-    hsp = moveSpeed; 
-	isMoving = true; 
-} 
-else if (keyboard_check(ord("S")) ) {
-    sprite_index = charWalkDown;
-    vsp = moveSpeed; 
-	isMoving = true; 
-} 
-else if (keyboard_check(ord("W")) ) {
-    sprite_index = charWalkUp;
-    vsp = -moveSpeed; 
-	isMoving = true; 
-}
+//if (keyboard_check(ord("A")) ) {
+//    sprite_index = charWalkLeft;
+//    hsp = -moveSpeed;
+//} 
+//else if (keyboard_check(ord("D")) ) {
+//    sprite_index = charWalkRight;
+//    hsp = moveSpeed; 
+//} 
+//else if (keyboard_check(ord("S")) ) {
+//    sprite_index = charWalkDown;
+//    vsp = moveSpeed; 
+//} 
+//else if (keyboard_check(ord("W")) ) {
+//    sprite_index = charWalkUp;
+//    vsp = -moveSpeed; 
+//}
 
 // Handle idle animations when movement keys are released
 if (keyboard_check_released(ord("A")) ) {
