@@ -271,9 +271,9 @@ function stoneBranch() { //this is the fifth dialogue branch for the prisoner wr
 
 
 function GuardDialogue(play, dial) : Dialogue(play, dial) constructor{
-	DialogueOptions = ["Knock on door"]; //Base Dialogue Options
+	dialogueOptions = ["Knock on door"]; //Base Dialogue Options
 	startingLine = " ... ";
-	InteractionAttempts = 0;
+	guardInteractionAttempts = 0;
 	guardSecretDialogueUnlocked = false; 
 	guardSecretDialogueBranch = 0; 
 	guardSecretDialogueExhausted = false; 
@@ -282,7 +282,7 @@ function GuardDialogue(play, dial) : Dialogue(play, dial) constructor{
 	function displayGuardMenu(){
 	if (player.hasStone && player.hasChisel && player.hasTalkedToPrisoner)
 	{
-		array_set(DialogueOptions, 0, "Secretly throw stone.");
+		array_set(dialogueOptions, 0, "Secretly throw stone.");
 		guardSecretDialogueExhausted = false;
 	}
 	 if (guardSecretDialogueExhausted || disableGuard)
@@ -292,7 +292,7 @@ function GuardDialogue(play, dial) : Dialogue(play, dial) constructor{
 		return; 
 	}
 	
-	dbox.setDialogue("", guardDialogueOptions);
+	dbox.setDialogue("", dialogueOptions);
 }//end displayGuardMenu
 
 function submitGuardAction(choice) 
@@ -349,7 +349,7 @@ function throwStone()
 {
 	var guardText = "You throw the stone, and it flies through the window and hits a far wall, noises singing from it. The guard gets up and grumbles, going over to check what it is.";
 	player.hasGuardDistracted = true;
-	prisoner.unlocksPrisoner(3);
+	global.prisoner.unlocksPrisoner(3);
 	disableGuard = true;
 	dbox.setDialogue(guardText);
 	player.isTalkingToGuard = false;
@@ -416,29 +416,29 @@ function handleSecretDialogue()
 	{
 	case 0: 
 		guardText += "Why do you care? It's not like my story will get you out of here.\""; 
-		array_set(DialogueOptions, 0, "\"............\""); 
+		array_set(dialogueOptions, 0, "\"............\""); 
 		guardSecretDialogueBranch++;		  //Increment dialogue branch to spawn next choice
 		break;
 	case 1: 
 		guardText += "Fine if you must know. I had dreams once, but they faded long ago with my ambition. " +
 					 "Now I'm stuck with cursed duty, dealing with annoying prisoners like you.\""; 
-		array_set(DialogueOptions, 0, "\"What kind of dreams did you have?\""); //Replace previous first option
+		array_set(dialogueOptions, 0, "\"What kind of dreams did you have?\""); //Replace previous first option
 		guardSecretDialogueBranch++;					
 		break;
 	case 2: 
 		guardText += ".............\""; 
-		array_set(DialogueOptions, 0, "\"..........\"");
+		array_set(dialogueOptions, 0, "\"..........\"");
 		guardSecretDialogueBranch++; 
 		break; 
 	case 3: 
 		guardText += "......Dreams....."
-		array_set(DialogueOptions, 0, "\"..........\"");
+		array_set(dialogueOptions, 0, "\"..........\"");
 		guardSecretDialogueBranch++;
 		break;
 	case 4:
 		guardText += "They were of glory and honor on the battlefield. I was young, a fierce fighter with pride " +
 					 "But after a skirmish left me with an arrow to the knee, those dreams turned to dust.\""; 
-		array_set(DialogueOptions, 0, "\"............\"");
+		array_set(dialogueOptions, 0, "\"............\"");
 		guardSecretDialogueBranch++; 
 		break; 
 		
@@ -450,7 +450,7 @@ function handleSecretDialogue()
 	    player.isTalkingToGuard = false;
 		return;
 	}//end switch
-	dbox.setDialogue(guardText, DialogueOptions);
+	dbox.setDialogue(guardText, dialogueOptions);
 }//end handleSecretDialogue
 
 }
