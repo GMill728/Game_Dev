@@ -19,7 +19,7 @@ if( instance_exists(objDialogueBox) ) {
 drawBox();
 
 if(thisPlayer.isTalkingToGuard) {
-	
+	global.guard.displayMenu();
 } else 
 if (thisPlayer.isTalkingToPrisoner) {
 	global.prisoner.displayMenu();

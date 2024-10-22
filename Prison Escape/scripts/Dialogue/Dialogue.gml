@@ -267,3 +267,190 @@ function stoneBranch() { //this is the fifth dialogue branch for the prisoner wr
 		}
 	}
 }
+
+
+
+function GuardDialogue(play, dial) : Dialogue(play, dial) constructor{
+	dialogueOptions = ["Knock on door"]; //Base Dialogue Options
+	startingLine = " ... ";
+	guardInteractionAttempts = 0;
+	guardSecretDialogueUnlocked = false; 
+	guardSecretDialogueBranch = 0; 
+	guardSecretDialogueExhausted = false; 
+	disableGuard = false;
+
+	function displayGuardMenu(){
+	if (player.hasStone && player.hasChisel && player.hasTalkedToPrisoner)
+	{
+		array_set(dialogueOptions, 0, "Secretly throw stone.");
+		guardSecretDialogueExhausted = false;
+	}
+	 if (guardSecretDialogueExhausted || disableGuard)
+	{
+		handleInnerMonologue(); 
+		player.isTalkingToGuard = false;
+		return; 
+	}
+	
+	dbox.setDialogue("", dialogueOptions);
+}//end displayGuardMenu
+
+function submitGuardAction(choice) 
+{
+	if (player.hasTalkedToPrisoner && !disableGuard)
+	{
+		throwStone();
+		player.isTalkingToGuard = false;
+		return;
+	}
+	
+	if (guardSecretDialogueUnlocked)
+	{
+		handleSecretDialogue(); // Unlock secret dialogue if triggered
+		return;
+	}
+	
+	guardInteractionAttempts++; 
+	
+	switch(guardInteractionAttempts) {
+		
+	case 1: //First Dialogue Option Branch
+		handleFirstAttempt();
+		break;
+		
+	case 2: //Second Dialogue Option Branch
+		handleSecondAttempt();
+		break;
+		
+	case 3: //third attempt branch
+		handleThirdAttempt(); 
+		break; 
+		
+	case 4:	//if player keeps knocking on door
+		handleSilentAttempt();
+		break; 
+		
+	case 5:
+		handleSilentAttempt(); 
+		break; 
+	
+	default:
+		if(guardInteractionAttempts > 5)
+		{
+			unlockSecretDialogue();
+		}
+		break; 
+		
+	}//end switch
+	
+}//end submitGuardAction
+
+function throwStone()
+{
+	var guardText = "You throw the stone, and it flies through the window and hits a far wall, noises singing from it. The guard gets up and grumbles, going over to check what it is.";
+	player.hasGuardDistracted = true;
+	global.prisoner.unlocksPrisoner(3);
+	disableGuard = true;
+	dbox.setDialogue(guardText);
+	player.isTalkingToGuard = false;
+}
+
+function handleFirstAttempt()
+{
+	var guardText = "Guard: \"What do you want? I'm not here to entertain you.\""; 
+	dbox.setDialogue(guardText); 
+	player.isTalkingToGuard = false;
+}
+
+function handleSecondAttempt()
+{
+	var guardText = "Guard: \"Talk? You think I have time for your drivel?\""; 
+	dbox.setDialogue(guardText); 
+	player.isTalkingToGuard = false;
+}
+
+function handleThirdAttempt()
+{
+	var guardText = "Guard: \"Is this a game to you? Because I don't find it amusing.\""; 
+	dbox.setDialogue(guardText); 
+	player.isTalkingToGuard = false;
+}
+
+function handleSilentAttempt()
+{
+	var guardText = "Guard: \".............\""; 
+	dbox.setDialogue(guardText); 
+	player.isTalkingToGuard = false;
+}
+
+function unlockSecretDialogue()
+{
+	guardSecretDialogueUnlocked = true; 
+	var guardText = "Guard: \"Fine! You Win! What is it that you want? All this banging is enough to make a man mad!\""; 
+	dbox.setDialogue(guardText, ["\"What lead you to become a guard?\""]);
+}
+
+function handleInnerMonologue()
+{
+	var monologueText = ""; 
+	if (!player.hasTalkedToPrisoner && player.hasStone && player.hasChisel)
+	{
+		monologueText += "[i]I've got the stone and chisel, but something still feels missing... Maybe that cryptic fool knows what's next.[/i]";
+	} 
+	else if (guardSecretDialogueUnlocked && guardSecretDialogueExhausted)
+	{
+		monologueText += "[i]He's not as bad as I thought. Maybe there's more to him than just a grumpy guard.[/i]"; 		
+	}
+	else
+	{
+		monologueText = "[i]Looks like the guard is distracted, No point in pushing my luck any further.[/i]"; 
+	}
+	dbox.setDialogue(monologueText); 
+}
+
+function handleSecretDialogue()
+{
+	var guardText = "Guard: \"";
+	
+	switch(guardSecretDialogueBranch)
+	{
+	case 0: 
+		guardText += "Why do you care? It's not like my story will get you out of here.\""; 
+		array_set(dialogueOptions, 0, "\"............\""); 
+		guardSecretDialogueBranch++;		  //Increment dialogue branch to spawn next choice
+		break;
+	case 1: 
+		guardText += "Fine if you must know. I had dreams once, but they faded long ago with my ambition. " +
+					 "Now I'm stuck with cursed duty, dealing with annoying prisoners like you.\""; 
+		array_set(dialogueOptions, 0, "\"What kind of dreams did you have?\""); //Replace previous first option
+		guardSecretDialogueBranch++;					
+		break;
+	case 2: 
+		guardText += ".............\""; 
+		array_set(dialogueOptions, 0, "\"..........\"");
+		guardSecretDialogueBranch++; 
+		break; 
+	case 3: 
+		guardText += "......Dreams....."
+		array_set(dialogueOptions, 0, "\"..........\"");
+		guardSecretDialogueBranch++;
+		break;
+	case 4:
+		guardText += "They were of glory and honor on the battlefield. I was young, a fierce fighter with pride " +
+					 "But after a skirmish left me with an arrow to the knee, those dreams turned to dust.\""; 
+		array_set(dialogueOptions, 0, "\"............\"");
+		guardSecretDialogueBranch++; 
+		break; 
+		
+	case 5: //What do you do around here? case
+		guardText += " You know, I suppose we all have our own burden to bear. " +
+		                "Even those stuck behind bars like you.\"";
+		dbox.setDialogue(guardText);
+		guardSecretDialogueExhausted = true;
+	    player.isTalkingToGuard = false;
+		return;
+	}//end switch
+	dbox.setDialogue(guardText, dialogueOptions);
+}//end handleSecretDialogue
+
+}
