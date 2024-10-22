@@ -273,7 +273,7 @@ function stoneBranch() { //this is the fifth dialogue branch for the prisoner wr
 function GuardDialogue(play, dial) : Dialogue(play, dial) constructor{
 	dialogueOptions = ["Knock on door"]; //Base Dialogue Options
 	startingLine = " ... ";
-	InteractionAttempts = 0;
+	guardInteractionAttempts = 0;
 	guardSecretDialogueUnlocked = false; 
 	guardSecretDialogueBranch = 0; 
 	guardSecretDialogueExhausted = false; 
