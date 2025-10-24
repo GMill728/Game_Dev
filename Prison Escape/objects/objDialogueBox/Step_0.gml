@@ -22,7 +22,7 @@ if (keyboard_check_pressed(vk_space) ) {
 	{
 		if (objPlayer.hasWon) 
 		{
-			alarm[2] = 120;
+			room_goto(Credits);
 		} 
 		else { // Check if choices exist
                 alarm[1] = 1;  // Close text box
